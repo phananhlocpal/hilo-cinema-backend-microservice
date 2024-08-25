@@ -1,0 +1,492 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7399C762-A703-4D20-A16D-8691449863AF}|APIGateway\\APIGateway\\APIGateway.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\apigateway\\apigateway\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7399C762-A703-4D20-A16D-8691449863AF}|APIGateway\\APIGateway\\APIGateway.csproj|solutionrelative:apigateway\\apigateway\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\services\\theaterservice\\controllers\\theatercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|solutionrelative:services\\theaterservice\\controllers\\theatercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7399C762-A703-4D20-A16D-8691449863AF}|APIGateway\\APIGateway\\APIGateway.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\apigateway\\apigateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7399C762-A703-4D20-A16D-8691449863AF}|APIGateway\\APIGateway\\APIGateway.csproj|solutionrelative:apigateway\\apigateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7399C762-A703-4D20-A16D-8691449863AF}|APIGateway\\APIGateway\\APIGateway.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\apigateway\\apigateway\\apigateway.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7399C762-A703-4D20-A16D-8691449863AF}|APIGateway\\APIGateway\\APIGateway.csproj|solutionrelative:apigateway\\apigateway\\apigateway.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\services\\theaterservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|solutionrelative:services\\theaterservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\services\\theaterservice\\data\\prepdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|solutionrelative:services\\theaterservice\\data\\prepdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\services\\theaterservice\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|solutionrelative:services\\theaterservice\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\services\\theaterservice\\data\\theaterrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|solutionrelative:services\\theaterservice\\data\\theaterrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\services\\theaterservice\\data\\itheaterrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|solutionrelative:services\\theaterservice\\data\\itheaterrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\services\\theaterservice\\models\\theatermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|solutionrelative:services\\theaterservice\\models\\theatermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\services\\theaterservice\\dtos\\theaterreaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|solutionrelative:services\\theaterservice\\dtos\\theaterreaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\services\\theaterservice\\dtos\\theatercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|solutionrelative:services\\theaterservice\\dtos\\theatercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\services\\theaterservice\\profiles\\theaterprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|solutionrelative:services\\theaterservice\\profiles\\theaterprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D322705B-6145-4969-B4BD-9DCFA6010263}|RabbitMQ\\RabbitMQ.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\rabbitmq\\rabbitmq\\rabbitmqpersitentconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D322705B-6145-4969-B4BD-9DCFA6010263}|RabbitMQ\\RabbitMQ.csproj|solutionrelative:rabbitmq\\rabbitmq\\rabbitmqpersitentconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D322705B-6145-4969-B4BD-9DCFA6010263}|RabbitMQ\\RabbitMQ.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\rabbitmq\\rabbitmq\\irabbitmqpersitentconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D322705B-6145-4969-B4BD-9DCFA6010263}|RabbitMQ\\RabbitMQ.csproj|solutionrelative:rabbitmq\\rabbitmq\\irabbitmqpersitentconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D322705B-6145-4969-B4BD-9DCFA6010263}|RabbitMQ\\RabbitMQ.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\rabbitmq\\rabbitmq\\ieventbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D322705B-6145-4969-B4BD-9DCFA6010263}|RabbitMQ\\RabbitMQ.csproj|solutionrelative:rabbitmq\\rabbitmq\\ieventbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D322705B-6145-4969-B4BD-9DCFA6010263}|RabbitMQ\\RabbitMQ.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\rabbitmq\\rabbitmq\\eventbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D322705B-6145-4969-B4BD-9DCFA6010263}|RabbitMQ\\RabbitMQ.csproj|solutionrelative:rabbitmq\\rabbitmq\\eventbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D322705B-6145-4969-B4BD-9DCFA6010263}|RabbitMQ\\RabbitMQ.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\rabbitmq\\events\\core\\intergrationevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D322705B-6145-4969-B4BD-9DCFA6010263}|RabbitMQ\\RabbitMQ.csproj|solutionrelative:rabbitmq\\events\\core\\intergrationevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D322705B-6145-4969-B4BD-9DCFA6010263}|RabbitMQ\\RabbitMQ.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\rabbitmq\\events\\core\\ieventbussubscriptionsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D322705B-6145-4969-B4BD-9DCFA6010263}|RabbitMQ\\RabbitMQ.csproj|solutionrelative:rabbitmq\\events\\core\\ieventbussubscriptionsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D322705B-6145-4969-B4BD-9DCFA6010263}|RabbitMQ\\RabbitMQ.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\rabbitmq\\commandbus\\iintergrationeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D322705B-6145-4969-B4BD-9DCFA6010263}|RabbitMQ\\RabbitMQ.csproj|solutionrelative:rabbitmq\\commandbus\\iintergrationeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D322705B-6145-4969-B4BD-9DCFA6010263}|RabbitMQ\\RabbitMQ.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\rabbitmq\\abstractions\\eventbussubscriptionsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D322705B-6145-4969-B4BD-9DCFA6010263}|RabbitMQ\\RabbitMQ.csproj|solutionrelative:rabbitmq\\abstractions\\eventbussubscriptionsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\services\\theaterservice\\theaterservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|solutionrelative:services\\theaterservice\\theaterservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D322705B-6145-4969-B4BD-9DCFA6010263}|RabbitMQ\\RabbitMQ.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\rabbitmq\\rabbitmq.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{D322705B-6145-4969-B4BD-9DCFA6010263}|RabbitMQ\\RabbitMQ.csproj|solutionrelative:rabbitmq\\rabbitmq.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\services\\theaterservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|solutionrelative:services\\theaterservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7399C762-A703-4D20-A16D-8691449863AF}|APIGateway\\APIGateway\\APIGateway.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\apigateway\\apigateway\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7399C762-A703-4D20-A16D-8691449863AF}|APIGateway\\APIGateway\\APIGateway.csproj|solutionrelative:apigateway\\apigateway\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7399C762-A703-4D20-A16D-8691449863AF}|APIGateway\\APIGateway\\APIGateway.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\apigateway\\apigateway\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7399C762-A703-4D20-A16D-8691449863AF}|APIGateway\\APIGateway\\APIGateway.csproj|solutionrelative:apigateway\\apigateway\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|c:\\users\\surface\\source\\repos\\hilocinema\\backend\\services\\theaterservice\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{013B7C44-36EA-4C19-8901-2C705FCC0377}|Services\\TheaterService\\TheaterService.csproj|solutionrelative:services\\theaterservice\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 11,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AppDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Data\\AppDBContext.cs",
+              "RelativeDocumentMoniker": "Services\\TheaterService\\Data\\AppDBContext.cs",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Data\\AppDBContext.cs",
+              "RelativeToolTip": "Services\\TheaterService\\Data\\AppDBContext.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAYwBUAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T15:05:27.432Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TheaterController.cs",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Controllers\\TheaterController.cs",
+              "RelativeDocumentMoniker": "Services\\TheaterService\\Controllers\\TheaterController.cs",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Controllers\\TheaterController.cs",
+              "RelativeToolTip": "Services\\TheaterService\\Controllers\\TheaterController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T00:34:22.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PrepDB.cs",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Data\\PrepDB.cs",
+              "RelativeDocumentMoniker": "Services\\TheaterService\\Data\\PrepDB.cs",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Data\\PrepDB.cs",
+              "RelativeToolTip": "Services\\TheaterService\\Data\\PrepDB.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T00:52:49.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Program.cs",
+              "RelativeDocumentMoniker": "Services\\TheaterService\\Program.cs",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Program.cs",
+              "RelativeToolTip": "Services\\TheaterService\\Program.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAADgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T15:05:31.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "APIGateway.csproj",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\APIGateway\\APIGateway\\APIGateway.csproj",
+              "RelativeDocumentMoniker": "APIGateway\\APIGateway\\APIGateway.csproj",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\APIGateway\\APIGateway\\APIGateway.csproj",
+              "RelativeToolTip": "APIGateway\\APIGateway\\APIGateway.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-12T01:31:49.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ocelot.json",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\APIGateway\\APIGateway\\ocelot.json",
+              "RelativeDocumentMoniker": "APIGateway\\APIGateway\\ocelot.json",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\APIGateway\\APIGateway\\ocelot.json",
+              "RelativeToolTip": "APIGateway\\APIGateway\\ocelot.json",
+              "ViewState": "AQIAAHcAAAAAAAAAAAAAAIIAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-12T00:22:28.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\APIGateway\\APIGateway\\Program.cs",
+              "RelativeDocumentMoniker": "APIGateway\\APIGateway\\Program.cs",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\APIGateway\\APIGateway\\Program.cs",
+              "RelativeToolTip": "APIGateway\\APIGateway\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T00:27:17.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TheaterRepo.cs",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Data\\TheaterRepo.cs",
+              "RelativeDocumentMoniker": "Services\\TheaterService\\Data\\TheaterRepo.cs",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Data\\TheaterRepo.cs",
+              "RelativeToolTip": "Services\\TheaterService\\Data\\TheaterRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T15:02:58.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ITheaterRepo.cs",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Data\\ITheaterRepo.cs",
+              "RelativeDocumentMoniker": "Services\\TheaterService\\Data\\ITheaterRepo.cs",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Data\\ITheaterRepo.cs",
+              "RelativeToolTip": "Services\\TheaterService\\Data\\ITheaterRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAYAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T09:41:04.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TheaterModel.cs",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Models\\TheaterModel.cs",
+              "RelativeDocumentMoniker": "Services\\TheaterService\\Models\\TheaterModel.cs",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Models\\TheaterModel.cs",
+              "RelativeToolTip": "Services\\TheaterService\\Models\\TheaterModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T00:46:46.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TheaterCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Dtos\\TheaterCreateDto.cs",
+              "RelativeDocumentMoniker": "Services\\TheaterService\\Dtos\\TheaterCreateDto.cs",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Dtos\\TheaterCreateDto.cs",
+              "RelativeToolTip": "Services\\TheaterService\\Dtos\\TheaterCreateDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T09:39:30.004Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IntergrationEvent.cs",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\RabbitMQ\\Events\\Core\\IntergrationEvent.cs",
+              "RelativeDocumentMoniker": "RabbitMQ\\Events\\Core\\IntergrationEvent.cs",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\RabbitMQ\\Events\\Core\\IntergrationEvent.cs",
+              "RelativeToolTip": "RabbitMQ\\Events\\Core\\IntergrationEvent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T03:28:50.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IRabbitMqPersitentConnection.cs",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\RabbitMQ\\RabbitMq\\IRabbitMqPersitentConnection.cs",
+              "RelativeDocumentMoniker": "RabbitMQ\\RabbitMq\\IRabbitMqPersitentConnection.cs",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\RabbitMQ\\RabbitMq\\IRabbitMqPersitentConnection.cs",
+              "RelativeToolTip": "RabbitMQ\\RabbitMq\\IRabbitMqPersitentConnection.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T02:54:13.772Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TheaterReadDto.cs",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Dtos\\TheaterReadDto.cs",
+              "RelativeDocumentMoniker": "Services\\TheaterService\\Dtos\\TheaterReadDto.cs",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Dtos\\TheaterReadDto.cs",
+              "RelativeToolTip": "Services\\TheaterService\\Dtos\\TheaterReadDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T16:45:39.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IEventBus.cs",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\RabbitMQ\\RabbitMq\\IEventBus.cs",
+              "RelativeDocumentMoniker": "RabbitMQ\\RabbitMq\\IEventBus.cs",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\RabbitMQ\\RabbitMq\\IEventBus.cs",
+              "RelativeToolTip": "RabbitMQ\\RabbitMq\\IEventBus.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T03:26:27.21Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "EventBus.cs",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\RabbitMQ\\RabbitMq\\EventBus.cs",
+              "RelativeDocumentMoniker": "RabbitMQ\\RabbitMq\\EventBus.cs",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\RabbitMQ\\RabbitMq\\EventBus.cs",
+              "RelativeToolTip": "RabbitMQ\\RabbitMq\\EventBus.cs",
+              "ViewState": "AQIAAMcAAAAAAAAAAAAowOIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T05:33:12.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TheaterProfile.cs",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Profiles\\TheaterProfile.cs",
+              "RelativeDocumentMoniker": "Services\\TheaterService\\Profiles\\TheaterProfile.cs",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Profiles\\TheaterProfile.cs",
+              "RelativeToolTip": "Services\\TheaterService\\Profiles\\TheaterProfile.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T00:46:39.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "RabbitMqPersitentConnection.cs",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\RabbitMQ\\RabbitMq\\RabbitMqPersitentConnection.cs",
+              "RelativeDocumentMoniker": "RabbitMQ\\RabbitMq\\RabbitMqPersitentConnection.cs",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\RabbitMQ\\RabbitMq\\RabbitMqPersitentConnection.cs",
+              "RelativeToolTip": "RabbitMQ\\RabbitMq\\RabbitMqPersitentConnection.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAYwG0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T02:56:54.974Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IEventBusSubscriptionsManager.cs",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\RabbitMQ\\Events\\Core\\IEventBusSubscriptionsManager.cs",
+              "RelativeDocumentMoniker": "RabbitMQ\\Events\\Core\\IEventBusSubscriptionsManager.cs",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\RabbitMQ\\Events\\Core\\IEventBusSubscriptionsManager.cs",
+              "RelativeToolTip": "RabbitMQ\\Events\\Core\\IEventBusSubscriptionsManager.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAmwCYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T05:30:51.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IIntergrationEventHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\RabbitMQ\\CommandBus\\IIntergrationEventHandler.cs",
+              "RelativeDocumentMoniker": "RabbitMQ\\CommandBus\\IIntergrationEventHandler.cs",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\RabbitMQ\\CommandBus\\IIntergrationEventHandler.cs",
+              "RelativeToolTip": "RabbitMQ\\CommandBus\\IIntergrationEventHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T03:34:04.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "EventBusSubscriptionsManager.cs",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\RabbitMQ\\Abstractions\\EventBusSubscriptionsManager.cs",
+              "RelativeDocumentMoniker": "RabbitMQ\\Abstractions\\EventBusSubscriptionsManager.cs",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\RabbitMQ\\Abstractions\\EventBusSubscriptionsManager.cs",
+              "RelativeToolTip": "RabbitMQ\\Abstractions\\EventBusSubscriptionsManager.cs",
+              "ViewState": "AQIAAG4AAAAAAAAAAAA7wIIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T05:28:14.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "TheaterService.csproj",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\TheaterService.csproj",
+              "RelativeDocumentMoniker": "Services\\TheaterService\\TheaterService.csproj",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\TheaterService.csproj",
+              "RelativeToolTip": "Services\\TheaterService\\TheaterService.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-12T00:40:13.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "RabbitMQ.csproj",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\RabbitMQ\\RabbitMQ.csproj",
+              "RelativeDocumentMoniker": "RabbitMQ\\RabbitMQ.csproj",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\RabbitMQ\\RabbitMQ.csproj",
+              "RelativeToolTip": "RabbitMQ\\RabbitMQ.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-15T02:50:13.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Services\\TheaterService\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Services\\TheaterService\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-12T00:33:34.836Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\appsettings.json",
+              "RelativeDocumentMoniker": "Services\\TheaterService\\appsettings.json",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\Services\\TheaterService\\appsettings.json",
+              "RelativeToolTip": "Services\\TheaterService\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-12T16:29:37.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\APIGateway\\APIGateway\\appsettings.json",
+              "RelativeDocumentMoniker": "APIGateway\\APIGateway\\appsettings.json",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\APIGateway\\APIGateway\\appsettings.json",
+              "RelativeToolTip": "APIGateway\\APIGateway\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-12T16:29:33.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\APIGateway\\APIGateway\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "APIGateway\\APIGateway\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\APIGateway\\APIGateway\\Properties\\launchSettings.json",
+              "RelativeToolTip": "APIGateway\\APIGateway\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACsAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-12T01:26:30.528Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

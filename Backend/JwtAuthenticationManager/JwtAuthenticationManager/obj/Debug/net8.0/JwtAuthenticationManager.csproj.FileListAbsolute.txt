@@ -1,0 +1,15 @@
+C:\Users\USER\OneDrive\Desktop\hilo-new\Backend\JwtAuthenticationManager\JwtAuthenticationManager\bin\Debug\net8.0\JwtAuthenticationManager.deps.json
+C:\Users\USER\OneDrive\Desktop\hilo-new\Backend\JwtAuthenticationManager\JwtAuthenticationManager\bin\Debug\net8.0\JwtAuthenticationManager.runtimeconfig.json
+C:\Users\USER\OneDrive\Desktop\hilo-new\Backend\JwtAuthenticationManager\JwtAuthenticationManager\bin\Debug\net8.0\JwtAuthenticationManager.dll
+C:\Users\USER\OneDrive\Desktop\hilo-new\Backend\JwtAuthenticationManager\JwtAuthenticationManager\bin\Debug\net8.0\JwtAuthenticationManager.pdb
+C:\Users\USER\OneDrive\Desktop\hilo-new\Backend\JwtAuthenticationManager\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.csproj.AssemblyReference.cache
+C:\Users\USER\OneDrive\Desktop\hilo-new\Backend\JwtAuthenticationManager\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\OneDrive\Desktop\hilo-new\Backend\JwtAuthenticationManager\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.AssemblyInfoInputs.cache
+C:\Users\USER\OneDrive\Desktop\hilo-new\Backend\JwtAuthenticationManager\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.AssemblyInfo.cs
+C:\Users\USER\OneDrive\Desktop\hilo-new\Backend\JwtAuthenticationManager\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.csproj.CoreCompileInputs.cache
+C:\Users\USER\OneDrive\Desktop\hilo-new\Backend\JwtAuthenticationManager\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.sourcelink.json
+C:\Users\USER\OneDrive\Desktop\hilo-new\Backend\JwtAuthenticationManager\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.dll
+C:\Users\USER\OneDrive\Desktop\hilo-new\Backend\JwtAuthenticationManager\JwtAuthenticationManager\obj\Debug\net8.0\refint\JwtAuthenticationManager.dll
+C:\Users\USER\OneDrive\Desktop\hilo-new\Backend\JwtAuthenticationManager\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.pdb
+C:\Users\USER\OneDrive\Desktop\hilo-new\Backend\JwtAuthenticationManager\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.genruntimeconfig.cache
+C:\Users\USER\OneDrive\Desktop\hilo-new\Backend\JwtAuthenticationManager\JwtAuthenticationManager\obj\Debug\net8.0\ref\JwtAuthenticationManager.dll
