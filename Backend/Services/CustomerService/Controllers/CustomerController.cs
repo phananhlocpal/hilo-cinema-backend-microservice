@@ -36,7 +36,7 @@ namespace CustomerService.Controllers
         }
 
         [HttpGet]
-        [Authorize(Policy = "AdminEmployeeOnly")]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<CustomerReadDTO>>> GetAllCustomers()
         {
             try
@@ -56,6 +56,7 @@ namespace CustomerService.Controllers
         }
 
         [HttpGet("count")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllCount()
         {
             try
@@ -71,7 +72,7 @@ namespace CustomerService.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Policy = "AdminEmployeeOnly")]
+        [AllowAnonymous]
         public async Task<ActionResult<CustomerReadDTO>> GetCustomerById(int id)
         {
             try
@@ -91,7 +92,7 @@ namespace CustomerService.Controllers
         }
 
         [HttpGet("email/{email}")]
-        [Authorize(Policy = "AdminEmployeeOnly")]
+        [AllowAnonymous]
         public async Task<ActionResult<CustomerReadDTO>> GetCustomerByEmail(string email)
         {
             try
@@ -111,7 +112,7 @@ namespace CustomerService.Controllers
         }
 
         [HttpGet("phone/{phone}")]
-        [Authorize(Policy = "AdminEmployeeOnly")]
+        [AllowAnonymous]
         public async Task<ActionResult<CustomerReadDTO>> GetCustomerByPhone(string phone)
         {
             try
@@ -138,7 +139,6 @@ namespace CustomerService.Controllers
             {
                 // Hash the password
                 customerCreateDto.Password = PasswordHasher.HashPassword(customerCreateDto.Password);
-
                 var customerModel = _mapper.Map<Customer>(customerCreateDto);
                 await _repository.CreateCustomerAsync(customerModel);
                 await _repository.SaveChangeAsync();
@@ -158,24 +158,36 @@ namespace CustomerService.Controllers
 
 
         [HttpPut("{customerId}")]
-        [Authorize(Policy = "AdminOnly")]
-        public async Task<ActionResult> UpdateCustomer(int customerId, [FromBody] Customer customer)
+        [Authorize(Policy = "AdminEmployeeOnly")]
+        public async Task<ActionResult> UpdateCustomer(int customerId, [FromBody] CustomerCreateDTO customerDto)
         {
-            if (customer.Id == null)
-            {
-                return BadRequest("Invalid customer data");
-            }
-
             try
             {
-                // Update password if provided, otherwise keep the existing one
-                if (!string.IsNullOrEmpty(customer.Password))
+                // Retrieve the existing customer from the repository
+                var existingCustomer = await _repository.GetCustomerByIdAsync(customerId);
+                if (existingCustomer == null)
                 {
-                    customer.Password = PasswordHasher.HashPassword(customer.Password);
+                    return NotFound("Customer not found");
                 }
 
-                await _repository.UpdateCustomerAsync(customer);
+                // Update password if provided, otherwise keep the existing one
+                if (!string.IsNullOrEmpty(customerDto.Password))
+                {
+                    customerDto.Password = PasswordHasher.HashPassword(customerDto.Password);
+                }
+                else
+                {
+                    // Preserve the existing password if a new one is not provided
+                    customerDto.Password = existingCustomer.Password;
+                }
+
+                // Map the incoming DTO to the existing entity
+                _mapper.Map(customerDto, existingCustomer);
+
+                // Save changes to the repository
+                await _repository.UpdateCustomerAsync(existingCustomer);
                 await _repository.SaveChangeAsync();
+
                 return NoContent();
             }
             catch (KeyNotFoundException)
@@ -185,13 +197,13 @@ namespace CustomerService.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "An error occurred while updating the customer");
-                return StatusCode(500, "Internal server error");
+                return StatusCode(500, ex.Message);
             }
         }
 
 
         [HttpPut("{customerId}/disable")]
-        [Authorize(Policy = "AdminOnly")]
+        [Authorize(Policy = "AdminEmployeeOnly")]
         public async Task<ActionResult> DisableCustomer(int customerId)
         {
             if (customerId == null)
