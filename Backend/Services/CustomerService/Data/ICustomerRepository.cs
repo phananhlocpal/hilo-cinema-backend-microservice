@@ -11,7 +11,7 @@ namespace CustomerService.Data
         Task CreateCustomerAsync(Customer customer);
         Task UpdateCustomerAsync(Customer customer);
         Task DisableCustomerAsync(int customerId);
-
+        Task<bool> EmailExistsAsync(string email);
         Task<int> GetAllCount();
         Task<bool> SaveChangeAsync();
     }

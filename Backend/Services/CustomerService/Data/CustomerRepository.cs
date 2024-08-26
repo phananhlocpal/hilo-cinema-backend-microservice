@@ -68,5 +68,9 @@ namespace CustomerService.Data
                 await _context.SaveChangesAsync();
             }
         }
+        public async Task<bool> EmailExistsAsync(string email)
+        {
+            return await _context.Customers.AnyAsync(e => e.Email == email);
+        }
     }
 }

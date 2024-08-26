@@ -45,7 +45,12 @@ namespace MovieService.Data.ActorData
                 await _context.SaveChangesAsync();
             }
         }
-
+        public async Task<IEnumerable<Actor>> GetActorsByMovieIdAsync(int movieId)
+        {
+            return await _context.Actors
+                .Where(actor => actor.Movies.Any(m => m.Id == movieId))
+                .ToListAsync();
+        }
         public async Task<int> CountAsync()
         {
             return await _context.Actors.CountAsync();

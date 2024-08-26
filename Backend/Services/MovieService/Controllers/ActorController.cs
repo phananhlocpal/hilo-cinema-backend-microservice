@@ -97,7 +97,17 @@ namespace MovieService.Controllers
 
             return NoContent();
         }
-
+        [HttpGet("GetActorByMovieId/{movieId}")]
+        [AllowAnonymous]
+        public async Task<ActionResult<IEnumerable<ActorReadDto>>> GetActorsByMovieId(int movieId)
+        {
+            var actors = await _repository.GetActorsByMovieIdAsync(movieId);
+            if (actors == null || !actors.Any())
+            {
+                return NotFound();
+            }
+            return Ok(_mapper.Map<IEnumerable<ActorReadDto>>(actors));
+        }
         [HttpPut("{id}/disable")]
         [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> HideActor(int id)

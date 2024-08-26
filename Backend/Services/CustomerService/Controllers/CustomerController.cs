@@ -139,6 +139,7 @@ namespace CustomerService.Controllers
             {
                 // Hash the password
                 customerCreateDto.Password = PasswordHasher.HashPassword(customerCreateDto.Password);
+                customerCreateDto.CreatedDate = DateOnly.FromDateTime(DateTime.Now);
                 var customerModel = _mapper.Map<Customer>(customerCreateDto);
                 await _repository.CreateCustomerAsync(customerModel);
                 await _repository.SaveChangeAsync();
@@ -226,6 +227,17 @@ namespace CustomerService.Controllers
                 _logger.LogError(ex, "An error occurred while updating the customer");
                 return StatusCode(500, "Internal server error");
             }
+        }
+        [HttpPost("CheckEmail")]
+        [Authorize(Policy = "AdminOnly")]
+        public async Task<ActionResult<bool>> CheckEmailExists([FromBody] string email)
+        {
+            if (await _repository.EmailExistsAsync(email))
+            {
+                return Ok(new { exists = true });
+            }
+
+            return Ok(new { exists = false });
         }
     }
 }

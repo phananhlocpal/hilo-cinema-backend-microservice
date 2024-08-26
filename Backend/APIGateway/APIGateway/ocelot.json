@@ -926,6 +926,25 @@
       }
     },
     {
+      "DownstreamPathTemplate": "/api/Customer/CheckEmail",
+      "DownstreamScheme": "https",
+      "UpstreamPathTemplate": "/CustomerService/CheckEmail",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5005
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      }
+    },
+    {
       "DownstreamPathTemplate": "/api/Customer/{customerId}/disable",
       "DownstreamScheme": "https",
       "UpstreamPathTemplate": "/CustomerService/{customerId}/disable",

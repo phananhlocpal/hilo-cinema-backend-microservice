@@ -8,6 +8,7 @@ namespace MovieService.Data.ActorData
         Task<Actor> GetByIdAsync(int id);
         Task InsertAsync(Actor actor);
         Task UpdateAsync(Actor actor);
+        Task<IEnumerable<Actor>> GetActorsByMovieIdAsync(int movieId);
         Task HideActor(int id);
         Task<int> CountAsync();
     }
