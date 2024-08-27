@@ -27,38 +27,52 @@ public partial class AuthenticateContext : DbContext
     {
         modelBuilder.Entity<Customer>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__customer__3213E83F62ACE4CF");
+            entity.HasKey(e => e.Id).HasName("PK__customer__3213E83FDCA69468");
 
             entity.ToTable("customer");
 
-            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Id)
+                .ValueGeneratedNever()
+                .HasColumnName("id");
+            entity.Property(e => e.Address)
+                .HasMaxLength(150)
+                .IsUnicode(false)
+                .HasColumnName("address");
+            entity.Property(e => e.Birthdate).HasColumnName("birthdate");
+            entity.Property(e => e.CreatedDate).HasColumnName("created_date");
             entity.Property(e => e.Email)
-                .HasMaxLength(30)
+                .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("email");
-            entity.Property(e => e.EmailValidationStatus)
-                .HasMaxLength(20)
+            entity.Property(e => e.Gender)
+                .HasMaxLength(6)
                 .IsUnicode(false)
-                .HasColumnName("email_validation_status");
+                .HasColumnName("gender");
+            entity.Property(e => e.Name)
+                .HasMaxLength(30)
+                .HasColumnName("name");
             entity.Property(e => e.Password)
-                .HasMaxLength(250)
+                .HasMaxLength(150)
                 .IsUnicode(false)
                 .HasColumnName("password");
+            entity.Property(e => e.Phone)
+                .HasMaxLength(10)
+                .IsUnicode(false)
+                .HasColumnName("phone");
+            entity.Property(e => e.Status)
+                .HasMaxLength(30)
+                .HasColumnName("status");
             entity.Property(e => e.Token)
-                .HasMaxLength(100)
+                .HasMaxLength(200)
                 .IsUnicode(false)
                 .HasColumnName("token");
-            entity.Property(e => e.TokenGenerationTime)
-                .IsRowVersion()
-                .IsConcurrencyToken()
-                .HasColumnName("token_generation_time");
         });
 
         modelBuilder.Entity<Employee>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__employee__3213E83FA5121341");
+            entity.HasKey(e => e.Id).HasName("PK__employee__3213E83FF4F82024");
 
-            entity.ToTable("employees");
+            entity.ToTable("employee");
 
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
@@ -97,6 +111,10 @@ public partial class AuthenticateContext : DbContext
             entity.Property(e => e.SysRole)
                 .HasMaxLength(30)
                 .HasColumnName("sys_role");
+            entity.Property(e => e.Token)
+                .HasMaxLength(200)
+                .IsUnicode(false)
+                .HasColumnName("token");
         });
 
         OnModelCreatingPartial(modelBuilder);

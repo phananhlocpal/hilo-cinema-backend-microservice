@@ -33,32 +33,5 @@ namespace AuthenticationService.Controllers
             if (authenticationResponse == null) return Unauthorized();
             return authenticationResponse;
         }
-
-        //[HttpPost]
-        //public async Task<ActionResult<CustomerReadDto>> CreateCustomer(CustomerCreateDto customerCreateDto)
-        //{
-        //    try
-        //    {
-        //        // Chuyển đổi DTO thành mô hình dữ liệu
-        //        var customerModel = _mapper.Map<Customer>(customerCreateDto);
-
-        //        // Tạo khách hàng mới trong cơ sở dữ liệu
-        //        await _repository.CreateCustomerAsync(customerModel);
-        //        await _repository.SaveChangesAsync();
-
-        //        // Chuyển đổi mô hình dữ liệu thành DTO để trả về
-        //        var customerReadDto = _mapper.Map<CustomerReadDto>(customerModel);
-
-        //        // Trả về mã trạng thái 201 Created với thông tin khách hàng
-        //        return CreatedAtAction(nameof(GetCustomerById), new { id = customerReadDto.Id }, customerReadDto);
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        // Ghi lại lỗi và trả về mã trạng thái 500 Internal Server Error
-        //        _logger.LogError(e, "An error occurred while creating the customer");
-        //        return StatusCode(500, "Internal server error");
-        //    }
-        //}
-
     }
 }

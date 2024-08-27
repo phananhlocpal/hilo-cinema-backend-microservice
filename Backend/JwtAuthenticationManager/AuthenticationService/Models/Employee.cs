@@ -25,6 +25,8 @@ public partial class Employee
 
     public string? SysRole { get; set; }
 
+    public string? Token { get; set; }
+
     public DateOnly? CreatedDate { get; set; }
 
     public string? Status { get; set; }

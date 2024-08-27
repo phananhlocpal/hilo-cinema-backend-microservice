@@ -33,27 +33,11 @@ builder.Services.AddSingleton<IHostedService>(provider => provider.GetRequiredSe
 // Configure CORS policy
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAdmin",
-        builder => builder.WithOrigins("http://localhost:1000")
+    options.AddPolicy("AllowAnyOrigin",
+        builder => builder.AllowAnyOrigin()
                           .AllowAnyHeader()
                           .AllowAnyMethod()
-                          .AllowCredentials());
-});
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowPublic",
-        builder => builder.WithOrigins("http://localhost:2000")
-                          .AllowAnyHeader()
-                          .AllowAnyMethod()
-                          .AllowCredentials());
-});
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowOther",
-        builder => builder.WithOrigins("http://localhost:1000")
-                          .AllowAnyHeader()
-                          .AllowAnyMethod()
-                          .AllowCredentials());
+    );
 });
 
 var app = builder.Build();
@@ -66,9 +50,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseCors("AllowAdmin");
-app.UseCors("AllowPublic");
-app.UseCors("AllowOther");
+app.UseCors("AllowAnyOrigin");
 app.UseAuthorization();
 app.MapControllers();
 
