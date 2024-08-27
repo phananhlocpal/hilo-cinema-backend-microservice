@@ -23,18 +23,56 @@ namespace MovieService.Data.ProducerData
             return await _context.Producers.FindAsync(id);
         }
 
-        public async Task InsertAsync(Producer producer)
+        public async Task InsertAsync(Producer producer, List<int> movieIds)
         {
             await _context.Producers.AddAsync(producer);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(); // Lưu Actor trước để lấy Id
+
+            // Thêm liên kết giữa Actor và Movies
+            foreach (var movieId in movieIds)
+            {
+                var movie = await _context.Movies.FindAsync(movieId);
+                if (movie != null)
+                {
+                    producer.Movies.Add(movie);  // Thêm movie vào collection của actor
+                }
+            }
+            await _context.SaveChangesAsync();  // Lưu thay đổi vào bảng movie_actor
         }
 
-        public async Task UpdateAsync(Producer producer)
+
+
+        public async Task UpdateAsync(Producer producer, List<int> movieIds)
         {
-            _context.Producers.Update(producer);
-            await _context.SaveChangesAsync();
-        }
+            var existingActor = await _context.Actors
+                .Include(a => a.Movies)
+                .FirstOrDefaultAsync(a => a.Id == producer.Id);
 
+            if (existingActor != null)
+            {
+                // Cập nhật các thuộc tính của actor
+                _context.Entry(existingActor).CurrentValues.SetValues(producer);
+
+                // Cập nhật liên kết với các movie
+                existingActor.Movies.Clear();
+                foreach (var movieId in movieIds)
+                {
+                    var movie = await _context.Movies.FindAsync(movieId);
+                    if (movie != null)
+                    {
+                        existingActor.Movies.Add(movie);
+                    }
+                }
+
+                await _context.SaveChangesAsync();
+            }
+        }
+        public async Task<IEnumerable<Producer>> GetProducersByMovieIdAsync(int movieId)
+        {
+            return await _context.Producers
+                .Where(producer => producer.Movies.Any(m => m.Id == movieId))
+                .ToListAsync();
+        }
         public async Task HiddenProducerAsync(int id)
         {
             var producer = await GetByIdAsync(id);

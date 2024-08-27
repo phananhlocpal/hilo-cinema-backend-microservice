@@ -9,6 +9,7 @@ using MovieService.Dtos.MovieDtos;
 using Microsoft.AspNetCore.Authorization;
 using MovieService.Data.ProducerData;
 using MovieService.Dtos.ProducerDtos;
+using MovieService.Dtos.ActorDtos;
 
 namespace MovieService.Controllers
 {
@@ -54,7 +55,7 @@ namespace MovieService.Controllers
         {
             var producer = _mapper.Map<Producer>(producerCreateDto);
 
-            if (producerCreateDto.Img != null && producerCreateDto.Img.Length > 0)
+            if (producerCreateDto.Img != null)
             {
                 using (var memoryStream = new MemoryStream())
                 {
@@ -63,37 +64,47 @@ namespace MovieService.Controllers
                 }
             }
 
-            await _repository.InsertAsync(producer);
+            await _repository.InsertAsync(producer, producerCreateDto.MovieIds); // Bao gồm movieIds ở đây
             var producerReadDto = _mapper.Map<ProducerReadDto>(producer);
             return CreatedAtAction(nameof(GetProducerById), new { id = producerReadDto.Id }, producerReadDto);
         }
-
-
-        // PUT: api/movies/{id}
         [HttpPut("{id}")]
         [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> UpdateProducer(int id, [FromForm] ProducerCreateDto producerCreateDto)
         {
-            var producer = await _repository.GetByIdAsync(id);
-            if (producer == null)
+            var actor = await _repository.GetByIdAsync(id);
+            if (actor == null)
             {
                 return NotFound();
             }
 
-            _mapper.Map(producerCreateDto, producer);
+            // Map other properties from DTO to the entity
+            _mapper.Map(producerCreateDto, actor);
 
+            // Only update the image if a new one is provided
             if (producerCreateDto.Img != null && producerCreateDto.Img.Length > 0)
             {
                 using (var memoryStream = new MemoryStream())
                 {
                     await producerCreateDto.Img.CopyToAsync(memoryStream);
-                    producer.Img = memoryStream.ToArray();
+                    actor.Img = memoryStream.ToArray();
                 }
             }
 
-            await _repository.UpdateAsync(producer);
-
+            await _repository.UpdateAsync(actor, producerCreateDto.MovieIds); // Truyền danh sách movieIds
             return NoContent();
+        }
+
+        [HttpGet("GetProducerByMovieId/{movieId}")]
+        [AllowAnonymous]
+        public async Task<ActionResult<IEnumerable<ProducerReadDto>>> GetProducerByMovieId(int movieId)
+        {
+            var producers = await _repository.GetProducersByMovieIdAsync(movieId);
+            if (producers == null || !producers.Any())
+            {
+                return NotFound();
+            }
+            return Ok(_mapper.Map<IEnumerable<ProducerReadDto>>(producers));
         }
 
 

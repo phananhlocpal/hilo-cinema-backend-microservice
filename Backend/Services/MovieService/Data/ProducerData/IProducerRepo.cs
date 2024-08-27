@@ -6,8 +6,9 @@ namespace MovieService.Data.ProducerData
     {
         Task<IEnumerable<Producer>> GetAllAsync();
         Task<Producer> GetByIdAsync(int id);
-        Task InsertAsync(Producer producer);
-        Task UpdateAsync(Producer producer);
+        Task InsertAsync(Producer producer, List<int> movieIds);
+        Task UpdateAsync(Producer producer, List<int> movieIds);
+        Task<IEnumerable<Producer>> GetProducersByMovieIdAsync(int movieId);
         Task HiddenProducerAsync(int id);
         Task<int> CountAsync();
     }

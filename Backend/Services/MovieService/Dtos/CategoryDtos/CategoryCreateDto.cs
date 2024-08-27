@@ -8,6 +8,6 @@ namespace MovieService.Dtos.CategoryDtos
         public string? Name { get; set; }
         public string? Status { get; set; }
 
-        public virtual ICollection<Movie> Movies { get; set; } = new List<Movie>();
+        public List<int> MovieIds { get; set; } = new List<int>();
     }
 }

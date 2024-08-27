@@ -246,6 +246,22 @@
         "TimeoutValue": 360000
       }
     },
+    //GetProducerByMovieId
+    {
+      "DownstreamPathTemplate": "/api/Producer/GetProducerByMovieId/{producerId}",
+      "DownstreamScheme": "https",
+      "UpstreamPathTemplate": "/ProducerService/GetProducerByMovieId/{producerId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      }
+    },
     // GetAll
     {
       "DownstreamPathTemplate": "/api/Producer",

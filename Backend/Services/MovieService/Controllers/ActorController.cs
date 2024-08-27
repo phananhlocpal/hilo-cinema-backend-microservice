@@ -52,24 +52,23 @@ namespace MovieService.Controllers
         // POST: api/actor
         [HttpPost]
         [Authorize(Policy = "AdminOnly")]
-        public async Task<ActionResult<ActorReadDto>> CreateActor([FromForm] ActorCreateDto actorCreateDto, IFormFile img)
+        public async Task<ActionResult<ActorReadDto>> CreateActor([FromForm] ActorCreateDto actorCreateDto)
         {
             var actor = _mapper.Map<Actor>(actorCreateDto);
 
-            if (img != null && img.Length > 0)
+            if (actorCreateDto.Img != null)
             {
                 using (var memoryStream = new MemoryStream())
                 {
-                    await img.CopyToAsync(memoryStream);
+                    await actorCreateDto.Img.CopyToAsync(memoryStream);
                     actor.Img = memoryStream.ToArray();
                 }
             }
 
-            await _repository.InsertAsync(actor);
+            await _repository.InsertAsync(actor, actorCreateDto.MovieIds); // Bao gồm movieIds ở đây
             var actorReadDto = _mapper.Map<ActorReadDto>(actor);
             return CreatedAtAction(nameof(GetActorById), new { id = actorReadDto.Id }, actorReadDto);
         }
-
         [HttpPut("{id}")]
         [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> UpdateActor(int id, [FromForm] ActorCreateDto actorCreateDto)
@@ -93,8 +92,7 @@ namespace MovieService.Controllers
                 }
             }
 
-            await _repository.UpdateAsync(actor);
-
+            await _repository.UpdateAsync(actor, actorCreateDto.MovieIds); // Truyền danh sách movieIds
             return NoContent();
         }
         [HttpGet("GetActorByMovieId/{movieId}")]
