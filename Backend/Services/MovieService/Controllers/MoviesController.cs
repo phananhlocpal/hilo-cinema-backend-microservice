@@ -68,8 +68,14 @@ namespace MovieService.Controllers
             {
                 return NotFound();
             }
-            return Ok(_mapper.Map<MovieReadDto>(movie));
+
+            var movieDto = _mapper.Map<MovieReadDto>(movie);
+            movieDto.ImgSmall = movie.ImgSmall != null ? Convert.ToBase64String(movie.ImgSmall) : null;
+            movieDto.ImgLarge = movie.ImgLarge != null ? Convert.ToBase64String(movie.ImgLarge) : null;
+
+            return Ok(movieDto);
         }
+
 
         // POST: api/movies
         [HttpPost]

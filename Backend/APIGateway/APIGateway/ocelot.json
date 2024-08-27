@@ -745,7 +745,7 @@
     // Schedule Service
     {
       "DownstreamPathTemplate": "/api/Schedule",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "UpstreamPathTemplate": "/ScheduleService",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamHostAndPorts": [
@@ -760,7 +760,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/Schedule/getSeatsBySchedule",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "UpstreamPathTemplate": "/ScheduleService/getSeatsBySchedule",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamHostAndPorts": [
@@ -775,7 +775,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/Schedule/movieUrl/{url}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "UpstreamPathTemplate": "/ScheduleService/movieUrl/{url}",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamHostAndPorts": [
@@ -790,7 +790,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/Schedule/{movieId}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "UpstreamPathTemplate": "/ScheduleService/{movieId}",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamHostAndPorts": [
