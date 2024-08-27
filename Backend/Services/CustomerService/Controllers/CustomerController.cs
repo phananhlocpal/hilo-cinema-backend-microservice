@@ -21,17 +21,20 @@ namespace CustomerService.Controllers
         private readonly ICustomerRepository _repository;
         private readonly IMapper _mapper;
         private readonly CustomerPublisher _customerPublisher;
+        private readonly CustomerEmailService _customerEmailService;
         private readonly ILogger<CustomerController> _logger;
 
         public CustomerController(
             ICustomerRepository repository,
             IMapper mapper,
             CustomerPublisher customerPublisher,
+            CustomerEmailService customerEmailService,
             ILogger<CustomerController> logger)
         {
             _repository = repository;
             _mapper = mapper;
             _customerPublisher = customerPublisher;
+            _customerEmailService = customerEmailService;
             _logger = logger;
         }
 
@@ -145,6 +148,7 @@ namespace CustomerService.Controllers
                 await _repository.SaveChangeAsync();
 
                 _customerPublisher.CreateCustomerPubSub(customerModel);
+                _customerEmailService.WelcomeEmail(customerModel);
 
                 var customerReadDto = _mapper.Map<CustomerReadDTO>(customerModel);
 
@@ -202,9 +206,8 @@ namespace CustomerService.Controllers
             }
         }
 
-
         [HttpPut("{customerId}/disable")]
-        [Authorize(Policy = "AdminEmployeeOnly")]
+        [Authorize]
         public async Task<ActionResult> DisableCustomer(int customerId)
         {
             if (customerId == null)
@@ -228,8 +231,9 @@ namespace CustomerService.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+
         [HttpPost("CheckEmail")]
-        [Authorize(Policy = "AdminOnly")]
+        [AllowAnonymous]
         public async Task<ActionResult<bool>> CheckEmailExists([FromBody] string email)
         {
             if (await _repository.EmailExistsAsync(email))

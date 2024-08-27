@@ -860,10 +860,6 @@
           "Port": 5005
         }
       ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": []
-      },
       "QoSOptions": {
         "TimeoutValue": 360000
       }
@@ -879,10 +875,6 @@
           "Port": 5005
         }
       ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": []
-      },
       "QoSOptions": {
         "TimeoutValue": 360000
       }
@@ -898,10 +890,6 @@
           "Port": 5005
         }
       ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": []
-      },
       "QoSOptions": {
         "TimeoutValue": 360000
       }
@@ -936,10 +924,6 @@
           "Port": 5005
         }
       ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": []
-      },
       "QoSOptions": {
         "TimeoutValue": 360000
       }
@@ -955,6 +939,10 @@
           "Port": 5005
         }
       ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
       "QoSOptions": {
         "TimeoutValue": 360000
       }

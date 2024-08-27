@@ -292,3 +292,4 @@ C:\Users\Surface\Documents\Pal\myproject\Hilo-Cinema-New\Backend\Services\Custom
 C:\Users\Surface\Documents\Pal\myproject\Hilo-Cinema-New\Backend\Services\CustomerService\obj\Debug\net8.0\CustomerService.pdb
 C:\Users\Surface\Documents\Pal\myproject\Hilo-Cinema-New\Backend\Services\CustomerService\obj\Debug\net8.0\CustomerService.genruntimeconfig.cache
 C:\Users\Surface\Documents\Pal\myproject\Hilo-Cinema-New\Backend\Services\CustomerService\obj\Debug\net8.0\ref\CustomerService.dll
+C:\Users\Surface\Documents\Pal\myproject\Hilo-Cinema-New\Backend\Services\CustomerService\bin\Debug\net8.0\CustomerService.staticwebassets.runtime.json

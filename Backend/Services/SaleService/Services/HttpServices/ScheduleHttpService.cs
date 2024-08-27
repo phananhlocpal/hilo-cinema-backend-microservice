@@ -2,7 +2,7 @@
 using SaleService.OtherModels;
 using System.Text.Json;
 
-namespace SaleService.Service.HttpServices
+namespace SaleService.Services.HttpServices
 {
     public class ScheduleHttpService
     {
