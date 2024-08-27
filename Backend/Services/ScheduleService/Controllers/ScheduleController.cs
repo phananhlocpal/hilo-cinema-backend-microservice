@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ScheduleService.OtherModels;
 using ScheduleService.Service.HttpServices;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ScheduleService.Controllers
 {
@@ -39,6 +40,7 @@ namespace ScheduleService.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<ScheduleReadDto>>> GetAllSchedules()
         {
             var schedules = await _repository.GetAllScheduleAsync();
@@ -80,6 +82,7 @@ namespace ScheduleService.Controllers
         }
 
         [HttpGet("getSeatsBySchedule")]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<object>>> GetSeatsBySchedude( int movieId, DateOnly date, int theaterId, int roomId, TimeOnly time)
         {
             var schedules = await _repository.GetSeatsBySchedude(movieId, date, theaterId, roomId, time);
@@ -112,6 +115,7 @@ namespace ScheduleService.Controllers
         }
 
         [HttpGet("GetOnlyScheduleWithoutSeats")]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<ScheduleReadDto>>> GetOnlyScheduleWithoutSeats()
         {
             var schedules = await _repository.GetAllScheduleAsync();
@@ -141,6 +145,7 @@ namespace ScheduleService.Controllers
             return Ok(scheduleReadDtos);
         }
         [HttpGet("movieUrl/{url}")]
+        [AllowAnonymous]
         public async Task<ActionResult<object>> GetSchedulesByMovieUrl(string url)
 
         {
@@ -227,6 +232,7 @@ namespace ScheduleService.Controllers
         }
 
         [HttpGet("GetScheduleByInvoiceId/{invoiceId}")]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<Schedule>>> GetScheduleByInvoiceId(int invoiceId)
         {
             var schedules = await _repository.GetScheduleByInvoiceIdAsync(invoiceId);
@@ -236,6 +242,7 @@ namespace ScheduleService.Controllers
 
         // POST: api/schedule
         [HttpPost]
+        [Authorize(Policy ="AdminOnly")]
         public async Task<ActionResult<ScheduleCreateDto>> CreateSchedule(ScheduleCreateDto scheduleCreateDto)
         {
             try
@@ -248,7 +255,8 @@ namespace ScheduleService.Controllers
                         MovieId = scheduleCreateDto.MovieId,
                         Date = scheduleCreateDto.Date,
                         Time = scheduleCreateDto.Time,
-                        SeatId = seatId
+                        SeatId = seatId,
+                        InvoiceId = null
                     };
                     schedules.Add(schedule);
                 }
@@ -265,7 +273,8 @@ namespace ScheduleService.Controllers
                     MovieId = scheduleCreateDto.MovieId,
                     Date = scheduleCreateDto.Date,
                     Time = scheduleCreateDto.Time,
-                    SeatIds = createdSchedules.Select(s => s.SeatId).ToList()
+                    SeatIds = createdSchedules.Select(s => s.SeatId).ToList(),
+                    InvoiceId = null,
                 };
 
                 return CreatedAtAction(nameof(GetAllSchedules), new { id = createdSchedules.First().MovieId }, scheduleCreateDtoResponse);

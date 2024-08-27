@@ -24,5 +24,12 @@ namespace SaleService.Service.RabbitMQServices
                 _logger.LogInformation("Published message to RabbitMQ for schedule with seatId {SeatId}.", schedule.SeatId);
             }
         }
+
+        public void UpdateEachInvoiceIdInSchedule(OriginalSchedule schedule)
+        {
+                // Publish message to RabbitMQ
+                PublishMessage(QueueName, schedule);
+                _logger.LogInformation("Published message to RabbitMQ for schedule with seatId {SeatId}.", schedule.SeatId);
+        }
     }
 }

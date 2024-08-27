@@ -64,5 +64,17 @@ namespace SaleService.Repositories.InvoiceRepository
                 .ToListAsync();
             return query;
         }
+
+        public async Task<bool> DeleteInvoiceAsync(int invoiceId)
+        {
+            var invoice = await _context.Invoices.FirstOrDefaultAsync(invoice => invoice.Id == invoiceId);
+            if (invoice == null)
+            {
+                return false;
+            }
+
+            _context.Invoices.Remove(invoice);
+            return await SaveChangesAsync();
+        }
     }
 }

@@ -6,7 +6,7 @@ using SaleService.Repositories.InvoiceRepository;
 using SaleService.Service.RabbitMQServices;
 using SaleService.Services.VNPayService;
 using Microsoft.Extensions.Caching.StackExchangeRedis;
-using SaleService.Service.HttpServices;
+using SaleService.Services.HttpServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +39,14 @@ builder.Services.AddHttpClient("ScheduleService", client =>
 {
     client.BaseAddress = new Uri("https://localhost:5003/api/Schedule/");
 });
+builder.Services.AddHttpClient("EmployeeService", client =>
+{
+    client.BaseAddress = new Uri("https://localhost:5006/api/Employee/");
+});
+builder.Services.AddHttpClient("CustomerService", client =>
+{
+    client.BaseAddress = new Uri("https://localhost:5005/api/Employee/");
+});
 
 // Register AutoMapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -51,6 +59,8 @@ builder.Services.AddScoped<IInvoiceRepo, InvoiceRepo>();
 builder.Services.AddSingleton<IVnPayService, VnPayService>();
 builder.Services.AddScoped<SalePublisherService>();
 builder.Services.AddScoped<ScheduleHttpService>();
+builder.Services.AddScoped<EmployeeHttpService>();
+builder.Services.AddScoped<CustomerHttpService>();
 // Register HttpContextAccessor
 builder.Services.AddHttpContextAccessor();
 
@@ -61,10 +71,9 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>
     {
-        builder.WithOrigins("http://localhost:2000")
+        builder.AllowAnyOrigin()
                .AllowAnyHeader()
-               .AllowAnyMethod()
-               .AllowCredentials();
+               .AllowAnyMethod();
     });
 });
 
@@ -76,6 +85,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "SaleService API V1");
+    c.RoutePrefix = string.Empty; // Adjust as needed
+});
+
+
 app.UseHttpsRedirection();
 app.UseCors();
 app.UseSession();

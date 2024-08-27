@@ -54,6 +54,22 @@ namespace SaleService.Repositories.InvoiceFoodRepository
             return invoiceFood;
         }
 
+        public async Task<bool> DeleteInvoiceFoodByInvoiceIdAsync(int invoiceId)
+        {
+            var invoiceFoods = await _context.InvoiceFoods
+                .Where(i => i.InvoiceId == invoiceId)
+                .ToListAsync();
+
+            if (invoiceFoods == null || !invoiceFoods.Any())
+            {
+                return false;
+            }
+
+            _context.InvoiceFoods.RemoveRange(invoiceFoods);
+            return await SaveChangesAsync();
+        }
+
+
         public async Task<bool> SaveChangesAsync()
         {
             return (await _context.SaveChangesAsync() >= 0);

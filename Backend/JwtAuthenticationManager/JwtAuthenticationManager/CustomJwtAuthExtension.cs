@@ -36,12 +36,8 @@ namespace JwtAuthenticationManager
             {
                 // Policy cho AdminOnly
                 options.AddPolicy("AdminOnly", policy =>
-                    policy.RequireClaim("Site", "admin")
-                          .RequireClaim("Role", "admin"));
+                    policy.RequireClaim("Role", "Admin"));
 
-                // Policy cho AdminEmployeeOnly (Chỉ dành cho admin và employee)
-                options.AddPolicy("AdminEmployeeOnly", policy =>
-                    policy.RequireClaim("Site", "admin"));
             });
         }
     }

@@ -9,6 +9,7 @@ namespace SaleService.Repositories.InvoiceFoodRepository
         Task<InvoiceFood> GetInvoiceFoodByFoodIdAsync(int foodId);
         Task<InvoiceFood> CreateInvoiceFoodAsync(InvoiceFood food);
         Task<InvoiceFood> UpdateInvoiceFoodAsync(InvoiceFood food);
+        Task<bool> DeleteInvoiceFoodByInvoiceIdAsync(int invoiceId);
         Task<bool> SaveChangesAsync();
     }
 }

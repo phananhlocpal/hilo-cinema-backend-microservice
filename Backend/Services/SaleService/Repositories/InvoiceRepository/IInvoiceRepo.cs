@@ -9,6 +9,7 @@ namespace SaleService.Repositories.InvoiceRepository
         Task<IEnumerable<Invoice>> GetInvoicesByCustomerId(int customerId);
         Task<Invoice> CreateInvoiceAsync(Invoice invoice);
         Task<Invoice> UpdateInvoiceAsync(Invoice invoice);
+        Task<bool> DeleteInvoiceAsync(int invoiceId);
         Task<bool> SaveChangesAsync();
     }
 }

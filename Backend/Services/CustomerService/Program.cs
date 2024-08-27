@@ -24,6 +24,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddSingleton<BaseMessageBroker>();
 builder.Services.AddScoped<CustomerPublisher>();
+builder.Services.AddScoped<CustomerEmailService>();
 builder.Services.AddCustomJwtAuthentication();
 
 // Configure CORS
@@ -31,7 +32,7 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>
     {
-        builder.WithOrigins("http://localhost:1000") // Update this URL to match your React app's URL
+        builder.AllowAnyOrigin()
                .AllowAnyHeader()
                .AllowAnyMethod();
     });
