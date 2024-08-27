@@ -20,31 +20,21 @@ builder.Services.AddDbContext<AuthenticateContext>(options =>
 
 // Register scoped services
 builder.Services.AddScoped<JwtTokenHandler>();
-<<<<<<< HEAD
-=======
 builder.Services.AddScoped<JwtTokenHandlerEmp>();
->>>>>>> 960a83c (commit)
 builder.Services.AddScoped<ICustomerRepo, CustomerRepo>();
 
 // Register singleton services
 builder.Services.AddSingleton<BaseMessageBroker>();
 builder.Services.AddSingleton<CustomerAuthenticationConsumer>();
 builder.Services.AddSingleton<IHostedService>(provider => provider.GetRequiredService<CustomerAuthenticationConsumer>());
-<<<<<<< HEAD
 
-=======
 builder.Services.AddSingleton<EmployeeAuthenticationConsumer>();
 builder.Services.AddSingleton<IHostedService>(provider => provider.GetRequiredService<EmployeeAuthenticationConsumer>());
->>>>>>> 960a83c (commit)
 // Configure CORS policy
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAdmin",
-<<<<<<< HEAD
-        builder => builder.WithOrigins("http://localhost:9000")
-=======
         builder => builder.WithOrigins("http://localhost:1000")
->>>>>>> 960a83c (commit)
                           .AllowAnyHeader()
                           .AllowAnyMethod()
                           .AllowCredentials());
@@ -57,7 +47,6 @@ builder.Services.AddCors(options =>
                           .AllowAnyMethod()
                           .AllowCredentials());
 });
-<<<<<<< HEAD
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowOther",
@@ -66,8 +55,6 @@ builder.Services.AddCors(options =>
                           .AllowAnyMethod()
                           .AllowCredentials());
 });
-=======
->>>>>>> 960a83c (commit)
 
 var app = builder.Build();
 
@@ -81,10 +68,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseCors("AllowAdmin");
 app.UseCors("AllowPublic");
-<<<<<<< HEAD
 app.UseCors("AllowOther");
-=======
->>>>>>> 960a83c (commit)
 app.UseAuthorization();
 app.MapControllers();
 

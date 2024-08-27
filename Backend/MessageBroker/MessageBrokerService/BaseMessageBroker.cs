@@ -20,8 +20,8 @@ namespace MessageBrokerService
             var factory = new ConnectionFactory
             {
                 HostName = "localhost",
-                UserName = "admin",
-                Password = "admin",
+                UserName = "guest",
+                Password = "guest",
                 VirtualHost = "/"
             };
 

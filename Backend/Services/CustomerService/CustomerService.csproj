@@ -24,4 +24,8 @@
     <ProjectReference Include="..\..\MessageBroker\MessageBrokerService\MessageBrokerService.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\img\" />
+  </ItemGroup>
+
 </Project>

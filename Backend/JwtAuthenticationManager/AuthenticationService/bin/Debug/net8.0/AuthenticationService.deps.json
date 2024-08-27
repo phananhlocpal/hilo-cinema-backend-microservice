@@ -9,10 +9,7 @@
       "AuthenticationService/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
-<<<<<<< HEAD
-=======
           "BCrypt.Net-Next": "4.0.3",
->>>>>>> 960a83c (commit)
           "JwtAuthenticationManager": "1.0.0",
           "MessageBrokerService": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.7",
@@ -82,8 +79,6 @@
           }
         }
       },
-<<<<<<< HEAD
-=======
       "BCrypt.Net-Next/4.0.3": {
         "runtime": {
           "lib/net6.0/BCrypt.Net-Next.dll": {
@@ -92,7 +87,6 @@
           }
         }
       },
->>>>>>> 960a83c (commit)
       "Humanizer.Core/2.14.1": {
         "runtime": {
           "lib/net6.0/Humanizer.dll": {
@@ -1015,8 +1009,6 @@
       "path": "azure.identity/1.10.3",
       "hashPath": "azure.identity.1.10.3.nupkg.sha512"
     },
-<<<<<<< HEAD
-=======
     "BCrypt.Net-Next/4.0.3": {
       "type": "package",
       "serviceable": true,
@@ -1024,7 +1016,6 @@
       "path": "bcrypt.net-next/4.0.3",
       "hashPath": "bcrypt.net-next.4.0.3.nupkg.sha512"
     },
->>>>>>> 960a83c (commit)
     "Humanizer.Core/2.14.1": {
       "type": "package",
       "serviceable": true,

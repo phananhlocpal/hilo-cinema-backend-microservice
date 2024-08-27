@@ -8,10 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
-<<<<<<< HEAD
-=======
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
->>>>>>> 960a83c (commit)
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.7">
@@ -27,11 +24,8 @@
     <ProjectReference Include="..\JwtAuthenticationManager\JwtAuthenticationManager.csproj" />
   </ItemGroup>
 
-<<<<<<< HEAD
   <ItemGroup>
     <Folder Include="Models\" />
   </ItemGroup>
 
-=======
->>>>>>> 960a83c (commit)
 </Project>

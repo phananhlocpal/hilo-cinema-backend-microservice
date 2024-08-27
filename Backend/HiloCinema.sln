@@ -33,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageBrokerService", "Mes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogService", "Services\BlogService\BlogService.csproj", "{AE2072EC-FA5B-47A3-BDC9-EAEC89707212}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthenticationService", "..\..\hilocinema-main (1)\hilocinema-main\Backend\JwtAuthenticationManager\AuthenticationService\AuthenticationService.csproj", "{25737257-3035-4D23-9308-8F18E3B21790}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthenticationService", "JwtAuthenticationManager\AuthenticationService\AuthenticationService.csproj", "{26A91306-CBCA-4E94-BEAA-DBD5141C0297}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,10 +85,10 @@ Global
 		{AE2072EC-FA5B-47A3-BDC9-EAEC89707212}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE2072EC-FA5B-47A3-BDC9-EAEC89707212}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE2072EC-FA5B-47A3-BDC9-EAEC89707212}.Release|Any CPU.Build.0 = Release|Any CPU
-		{25737257-3035-4D23-9308-8F18E3B21790}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{25737257-3035-4D23-9308-8F18E3B21790}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{25737257-3035-4D23-9308-8F18E3B21790}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{25737257-3035-4D23-9308-8F18E3B21790}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26A91306-CBCA-4E94-BEAA-DBD5141C0297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26A91306-CBCA-4E94-BEAA-DBD5141C0297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26A91306-CBCA-4E94-BEAA-DBD5141C0297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26A91306-CBCA-4E94-BEAA-DBD5141C0297}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,7 +105,7 @@ Global
 		{4348BBA2-0E7F-4B59-A4F3-5A764D3E174A} = {832B2E38-4895-4511-9830-5C25AB4403AB}
 		{86E8C80B-033E-424C-BE08-721D6FD61493} = {6447B98A-8033-487F-8FEF-7F91DBD645F3}
 		{AE2072EC-FA5B-47A3-BDC9-EAEC89707212} = {9E5C7D71-035D-4FED-AE04-5B65D3EDF8D7}
-		{25737257-3035-4D23-9308-8F18E3B21790} = {832B2E38-4895-4511-9830-5C25AB4403AB}
+		{26A91306-CBCA-4E94-BEAA-DBD5141C0297} = {832B2E38-4895-4511-9830-5C25AB4403AB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3143ECA9-4E22-4315-A9C3-F29DD52CD1A6}

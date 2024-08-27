@@ -1,18 +1,17 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\JwtAuthenticationManager\\AuthenticationService\\AuthenticationService.csproj": {}
+    "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\JwtAuthenticationManager\\AuthenticationService\\AuthenticationService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\JwtAuthenticationManager\\AuthenticationService\\AuthenticationService.csproj": {
+    "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\JwtAuthenticationManager\\AuthenticationService\\AuthenticationService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\JwtAuthenticationManager\\AuthenticationService\\AuthenticationService.csproj",
+        "projectUniqueName": "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\JwtAuthenticationManager\\AuthenticationService\\AuthenticationService.csproj",
         "projectName": "AuthenticationService",
-        "projectPath": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\JwtAuthenticationManager\\AuthenticationService\\AuthenticationService.csproj",
+        "projectPath": "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\JwtAuthenticationManager\\AuthenticationService\\AuthenticationService.csproj",
         "packagesPath": "C:\\Users\\Surface\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\JwtAuthenticationManager\\AuthenticationService\\obj\\",
+        "outputPath": "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\JwtAuthenticationManager\\AuthenticationService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -20,22 +19,6 @@
         "configFilePaths": [
           "C:\\Users\\Surface\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-    "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\JwtAuthenticationManager\\AuthenticationService\\AuthenticationService.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\JwtAuthenticationManager\\AuthenticationService\\AuthenticationService.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\JwtAuthenticationManager\\AuthenticationService\\AuthenticationService.csproj",
-        "projectName": "AuthenticationService",
-        "projectPath": "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\JwtAuthenticationManager\\AuthenticationService\\AuthenticationService.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\JwtAuthenticationManager\\AuthenticationService\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 960a83c (commit)
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -50,19 +33,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-<<<<<<< HEAD
-              "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj": {
-                "projectPath": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj"
+              "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj": {
+                "projectPath": "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj"
               },
-              "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\MessageBroker\\MessageBrokerService\\MessageBrokerService.csproj": {
-                "projectPath": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\MessageBroker\\MessageBrokerService\\MessageBrokerService.csproj"
-=======
-              "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj": {
-                "projectPath": "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj"
-              },
-              "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\MessageBroker\\MessageBrokerService\\MessageBrokerService.csproj": {
-                "projectPath": "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\MessageBroker\\MessageBrokerService\\MessageBrokerService.csproj"
->>>>>>> 960a83c (commit)
+              "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\MessageBroker\\MessageBrokerService\\MessageBrokerService.csproj": {
+                "projectPath": "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\MessageBroker\\MessageBrokerService\\MessageBrokerService.csproj"
               }
             }
           }
@@ -86,13 +61,10 @@
               "target": "Package",
               "version": "[12.0.1, )"
             },
-<<<<<<< HEAD
-=======
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[4.0.3, )"
             },
->>>>>>> 960a83c (commit)
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.7, )"
@@ -139,15 +111,14 @@
         }
       }
     },
-<<<<<<< HEAD
-    "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj": {
+    "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj",
+        "projectUniqueName": "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj",
         "projectName": "JwtAuthenticationManager",
-        "projectPath": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj",
+        "projectPath": "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj",
         "packagesPath": "C:\\Users\\Surface\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\obj\\",
+        "outputPath": "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -155,19 +126,6 @@
         "configFilePaths": [
           "C:\\Users\\Surface\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-    "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj",
-        "projectName": "JwtAuthenticationManager",
-        "projectPath": "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 960a83c (commit)
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -250,15 +208,14 @@
         }
       }
     },
-<<<<<<< HEAD
-    "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\MessageBroker\\MessageBrokerService\\MessageBrokerService.csproj": {
+    "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\MessageBroker\\MessageBrokerService\\MessageBrokerService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\MessageBroker\\MessageBrokerService\\MessageBrokerService.csproj",
+        "projectUniqueName": "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\MessageBroker\\MessageBrokerService\\MessageBrokerService.csproj",
         "projectName": "MessageBrokerService",
-        "projectPath": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\MessageBroker\\MessageBrokerService\\MessageBrokerService.csproj",
+        "projectPath": "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\MessageBroker\\MessageBrokerService\\MessageBrokerService.csproj",
         "packagesPath": "C:\\Users\\Surface\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\MessageBroker\\MessageBrokerService\\obj\\",
+        "outputPath": "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\MessageBroker\\MessageBrokerService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -266,19 +223,6 @@
         "configFilePaths": [
           "C:\\Users\\Surface\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-    "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\MessageBroker\\MessageBrokerService\\MessageBrokerService.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\MessageBroker\\MessageBrokerService\\MessageBrokerService.csproj",
-        "projectName": "MessageBrokerService",
-        "projectPath": "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\MessageBroker\\MessageBrokerService\\MessageBrokerService.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\MessageBroker\\MessageBrokerService\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 960a83c (commit)
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

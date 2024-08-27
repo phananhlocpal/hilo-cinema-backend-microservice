@@ -1,8 +1,5 @@
 ﻿using AuthenticationService.Models;
-<<<<<<< HEAD
 using AuthenticationService.Repositories.EmployeeRepositories;
-=======
->>>>>>> 960a83c (commit)
 using JwtAuthenticationManager.Models;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -38,11 +35,7 @@ namespace AuthenticationService.Repositories
             {
                 userAccount = _context.Employees.FirstOrDefault(x =>
                     x.Email == authenticationRequest.Email &&
-<<<<<<< HEAD
                     x.Password == authenticationRequest.Password);   
-=======
-                    x.Password == authenticationRequest.Password);
->>>>>>> 960a83c (commit)
             }
             else if (authenticationRequest.Site == "public")
             {
@@ -92,11 +85,7 @@ namespace AuthenticationService.Repositories
 
             return new AuthenticationResponse
             {
-<<<<<<< HEAD
                 Account = userAccount,
-=======
-                Email = authenticationRequest.Email,
->>>>>>> 960a83c (commit)
                 ExpiresIn = (int)tokenExpiryTimeStamp.Subtract(DateTime.Now).TotalSeconds,
                 JwtToken = token,
             };

@@ -20,4 +20,6 @@ public partial class Blog
     public byte[]? Img { get; set; }
 
     public string? Status { get; set; }
+
+    public string? Type { get; set; }
 }

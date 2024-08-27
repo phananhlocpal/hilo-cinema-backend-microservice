@@ -75,8 +75,6 @@
           }
         }
       },
-<<<<<<< HEAD
-=======
       "BCrypt.Net-Next/4.0.3": {
         "type": "package",
         "compile": {
@@ -90,7 +88,6 @@
           }
         }
       },
->>>>>>> 960a83c (commit)
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -1729,8 +1726,6 @@
         "lib/netstandard2.0/Azure.Identity.xml"
       ]
     },
-<<<<<<< HEAD
-=======
     "BCrypt.Net-Next/4.0.3": {
       "sha512": "W+U9WvmZQgi5cX6FS5GDtDoPzUCV4LkBLkywq/kRZhuDwcbavOzcDAr3LXJFqHUi952Yj3LEYoWW0jbEUQChsA==",
       "type": "package",
@@ -1762,7 +1757,6 @@
         "readme.md"
       ]
     },
->>>>>>> 960a83c (commit)
     "Humanizer.Core/2.14.1": {
       "sha512": "lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "type": "package",
@@ -4500,10 +4494,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
-<<<<<<< HEAD
-=======
       "BCrypt.Net-Next >= 4.0.3",
->>>>>>> 960a83c (commit)
       "JwtAuthenticationManager >= 1.0.0",
       "MessageBrokerService >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 8.0.7",
@@ -4514,22 +4505,17 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\Surface\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
-=======
-    "C:\\Users\\USER\\.nuget\\packages\\": {}
->>>>>>> 960a83c (commit)
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\JwtAuthenticationManager\\AuthenticationService\\AuthenticationService.csproj",
+      "projectUniqueName": "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\JwtAuthenticationManager\\AuthenticationService\\AuthenticationService.csproj",
       "projectName": "AuthenticationService",
-      "projectPath": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\JwtAuthenticationManager\\AuthenticationService\\AuthenticationService.csproj",
+      "projectPath": "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\JwtAuthenticationManager\\AuthenticationService\\AuthenticationService.csproj",
       "packagesPath": "C:\\Users\\Surface\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\JwtAuthenticationManager\\AuthenticationService\\obj\\",
+      "outputPath": "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\JwtAuthenticationManager\\AuthenticationService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4537,16 +4523,6 @@
       "configFilePaths": [
         "C:\\Users\\Surface\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-      "projectUniqueName": "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\JwtAuthenticationManager\\AuthenticationService\\AuthenticationService.csproj",
-      "projectName": "AuthenticationService",
-      "projectPath": "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\JwtAuthenticationManager\\AuthenticationService\\AuthenticationService.csproj",
-      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\JwtAuthenticationManager\\AuthenticationService\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 960a83c (commit)
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4561,19 +4537,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-<<<<<<< HEAD
-            "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj": {
-              "projectPath": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj"
+            "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj": {
+              "projectPath": "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj"
             },
-            "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\MessageBroker\\MessageBrokerService\\MessageBrokerService.csproj": {
-              "projectPath": "C:\\Users\\Surface\\source\\repos\\HiloCinema\\Backend\\MessageBroker\\MessageBrokerService\\MessageBrokerService.csproj"
-=======
-            "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj": {
-              "projectPath": "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\JwtAuthenticationManager\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj"
-            },
-            "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\MessageBroker\\MessageBrokerService\\MessageBrokerService.csproj": {
-              "projectPath": "C:\\Users\\USER\\OneDrive\\Desktop\\hilocinema-main (1)\\hilocinema-main\\Backend\\MessageBroker\\MessageBrokerService\\MessageBrokerService.csproj"
->>>>>>> 960a83c (commit)
+            "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\MessageBroker\\MessageBrokerService\\MessageBrokerService.csproj": {
+              "projectPath": "C:\\Users\\Surface\\Documents\\Pal\\myproject\\Hilo-Cinema-New\\Backend\\MessageBroker\\MessageBrokerService\\MessageBrokerService.csproj"
             }
           }
         }
@@ -4597,13 +4565,10 @@
             "target": "Package",
             "version": "[12.0.1, )"
           },
-<<<<<<< HEAD
-=======
           "BCrypt.Net-Next": {
             "target": "Package",
             "version": "[4.0.3, )"
           },
->>>>>>> 960a83c (commit)
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[8.0.7, )"

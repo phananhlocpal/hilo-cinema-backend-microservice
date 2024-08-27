@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MessageBrokerService
-build_property.ProjectDir = C:\Users\USER\OneDrive\Desktop\hilo-new\Backend\MessageBroker\MessageBrokerService\
+build_property.ProjectDir = C:\Users\Surface\Documents\Pal\myproject\Hilo-Cinema-New\Backend\MessageBroker\MessageBrokerService\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

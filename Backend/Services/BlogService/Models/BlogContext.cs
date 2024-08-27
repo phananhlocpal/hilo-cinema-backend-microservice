@@ -45,6 +45,9 @@ public partial class BlogContext : DbContext
             entity.Property(e => e.Title)
                 .HasMaxLength(100)
                 .HasColumnName("title");
+            entity.Property(e => e.Type)
+                .HasMaxLength(20)
+                .HasColumnName("type");
         });
 
         OnModelCreatingPartial(modelBuilder);

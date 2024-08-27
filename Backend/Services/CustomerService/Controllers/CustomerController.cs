@@ -132,7 +132,7 @@ namespace CustomerService.Controllers
         }
 
         [HttpPost]
-        [Authorize(Policy = "AdminEmployeeOnly")]
+        [AllowAnonymous]
         public async Task<ActionResult> CreateCustomer(CustomerCreateDTO customerCreateDto)
         {
             try
