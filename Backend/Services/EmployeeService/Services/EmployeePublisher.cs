@@ -18,24 +18,8 @@ namespace EmployeeService.Services
 
         public void PublishEmployeeCreation(Employee employee)
         {
-            var employeeDto = new EmployeeCreateDto
-            {
-                Name = employee.Name,
-                Email = employee.Email,
-                Address = employee.Address,
-                Phone = employee.Phone,
-                Gender = employee.Gender,
-                Birthdate = employee.Birthdate,
-                Password = employee.Password,
-                Position = employee.Position,
-                SysRole = employee.SysRole,
-                CreatedDate = employee.CreatedDate,
-                Status = employee.Status
-            };
-
             var queueName = "employee_authen";
-            var message = JsonSerializer.Serialize(employeeDto);
-            PublishMessage(queueName, message);
+            PublishMessage(queueName, employee);
             _logger.LogInformation("Message published successfully.");
         }
 

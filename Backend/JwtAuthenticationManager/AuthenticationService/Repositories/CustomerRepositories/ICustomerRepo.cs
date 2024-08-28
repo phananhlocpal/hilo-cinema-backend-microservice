@@ -6,6 +6,7 @@ namespace AuthenticationService.Repositories.CustomerRepositories
     {
         Task CreateCustomerAsync(Customer customer);
         Task UpdatePassword(Customer customer);
+        Task UpdateCustomerAsync(Customer customer);
         Task<bool> SaveChangeAsync();
     }
 }

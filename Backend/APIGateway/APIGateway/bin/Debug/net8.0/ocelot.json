@@ -896,6 +896,25 @@
       }
     },
     {
+      "DownstreamPathTemplate": "/api/Customer",
+      "DownstreamScheme": "https",
+      "UpstreamPathTemplate": "/CustomerService",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5005
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      }
+    },
+    {
       "DownstreamPathTemplate": "/api/Customer/{CustomerId}",
       "DownstreamScheme": "https",
       "UpstreamPathTemplate": "/CustomerService/{CustomerId}",

@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using BCrypt.Net;
 
 namespace AuthenticationService.Repositories
 {
@@ -33,15 +34,23 @@ namespace AuthenticationService.Repositories
             // Fetch data based on site value
             if (authenticationRequest.Site == "admin")
             {
-                userAccount = _context.Employees.FirstOrDefault(x =>
-                    x.Email == authenticationRequest.Email &&
-                    x.Password == authenticationRequest.Password);   
+                var adminEmployee = _context.Employees.FirstOrDefault(x =>
+                    x.Email == authenticationRequest.Email);
+
+                if (adminEmployee != null && BCrypt.Net.BCrypt.Verify(authenticationRequest.Password, adminEmployee.Password))
+                {
+                    userAccount = adminEmployee;
+                }
             }
             else if (authenticationRequest.Site == "public")
             {
-                userAccount = _context.Customers.FirstOrDefault(x =>
-                    x.Email == authenticationRequest.Email &&
-                    x.Password == authenticationRequest.Password);
+                var publicCustomer = _context.Customers.FirstOrDefault(x =>
+                    x.Email == authenticationRequest.Email);
+
+                if (publicCustomer != null && BCrypt.Net.BCrypt.Verify(authenticationRequest.Password, publicCustomer.Password))
+                {
+                    userAccount = publicCustomer;
+                }
             }
 
             if (userAccount == null)
@@ -62,7 +71,7 @@ namespace AuthenticationService.Repositories
             {
                 claimsIdentity.AddClaim(new Claim("Role", employee.SysRole));
             }
-            else if (userAccount is Customer)
+            else if (userAccount is Customer customer)
             {
                 claimsIdentity.AddClaim(new Claim("Role", "customer"));
             }

@@ -1,6 +1,5 @@
 ﻿using AuthenticationService.Models;
-using AuthenticationService.OtherModels;
-using AuthenticationService.Repositories.EmployeeRepositories;
+using AuthenticationService.Repositories.CustomerRepositories;
 using MessageBrokerService;
 using RabbitMQ.Client.Events;
 using System.Text;
@@ -8,14 +7,14 @@ using System.Text.Json;
 
 namespace AuthenticationService.Services
 {
-    public class EmployeeAuthenticationConsumer : BaseMessageBroker, IHostedService
+    public class CustomerAuthenticationUpdateConsumer : BaseMessageBroker, IHostedService
     {
-        private readonly ILogger<CustomerAuthenticationCreateConsumer> _logger;
+        private readonly ILogger<CustomerAuthenticationUpdateConsumer> _logger;
         private readonly IServiceScopeFactory _scopeFactory;
-        private const string QueueName = "employee_authen";
+        private const string QueueName = "customer_authen_update";
 
-        public EmployeeAuthenticationConsumer(
-            ILogger<CustomerAuthenticationCreateConsumer> logger,
+        public CustomerAuthenticationUpdateConsumer(
+            ILogger<CustomerAuthenticationUpdateConsumer> logger,
             IServiceScopeFactory scopeFactory) : base(logger)
         {
             _logger = logger;
@@ -30,16 +29,10 @@ namespace AuthenticationService.Services
             return Task.CompletedTask;
         }
 
-        public Task StopAsync(CancellationToken cancellationToken)
-        {
-            Dispose();
-            return Task.CompletedTask;
-        }
-
-        private async void HandleMessage(object sender, BasicDeliverEventArgs e)
+        private async void HandleMessage(object? sender, BasicDeliverEventArgs e)
         {
             using var scope = _scopeFactory.CreateScope();
-            var repository = scope.ServiceProvider.GetRequiredService<IEmployeeRepo>();
+            var repository = scope.ServiceProvider.GetRequiredService<ICustomerRepo>();
 
             try
             {
@@ -49,13 +42,13 @@ namespace AuthenticationService.Services
                 var message = Encoding.UTF8.GetString(body);
 
                 // Deserialize the message
-                var employeeFromMessage = JsonSerializer.Deserialize<Employee>(message);
-                _logger.LogInformation($"Custumer From Message is {employeeFromMessage?.Email}");
+                var customerFromMessage = JsonSerializer.Deserialize<Customer>(message);
+                _logger.LogInformation($"Custumer From Message is {customerFromMessage?.Email}");
 
-                if (employeeFromMessage != null)
+                if (customerFromMessage != null)
                 {
                     // Process the customer authentication creation
-                    await CreateEmployeeAuthen(employeeFromMessage, repository);
+                    await UpdateCustomerAuthen(customerFromMessage, repository);
 
                     // Acknowledge the message
                     AcknowledgeMessage(e.DeliveryTag);
@@ -75,10 +68,16 @@ namespace AuthenticationService.Services
             }
         }
 
-        private async Task CreateEmployeeAuthen(Employee employee, IEmployeeRepo employeeRepo)
+        public Task StopAsync(CancellationToken cancellationToken)
         {
-            await employeeRepo.CreateEmployeeAsync(employee);
-            await employeeRepo.SaveChangeAsync();
+            Dispose();
+            return Task.CompletedTask;
+        }
+
+        private async Task UpdateCustomerAuthen(Customer customer, ICustomerRepo customerRepo)
+        {
+            await customerRepo.UpdateCustomerAsync(customer);
+            await customerRepo.SaveChangeAsync();
         }
     }
 }

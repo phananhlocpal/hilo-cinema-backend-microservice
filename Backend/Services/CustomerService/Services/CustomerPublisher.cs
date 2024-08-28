@@ -9,12 +9,21 @@ namespace CustomerService.Services
         public CustomerPublisher(ILogger<CustomerPublisher> logger) : base(logger)
         {
             _logger = logger;
-            DeclareQueue("customer_authen");
+            DeclareQueue("customer_authen_create");
+            DeclareQueue("customer_authen_update");
         }
 
         public void CreateCustomerPubSub(Customer customer)
         {
-            var queueName = "customer_authen";
+            var queueName = "customer_authen_create";
+            var message = customer;
+            PublishMessage(queueName, message);
+            _logger.LogInformation("Message published successfully.");
+        }
+
+        public void UpdateCustomerPubSub(Customer customer)
+        {
+            var queueName = "customer_authen_update";
             var message = customer;
             PublishMessage(queueName, message);
             _logger.LogInformation("Message published successfully.");

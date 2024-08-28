@@ -8,14 +8,14 @@ using AuthenticationService.Repositories.CustomerRepositories;
 
 namespace AuthenticationService.Services
 {
-    public class CustomerAuthenticationConsumer : BaseMessageBroker, IHostedService
+    public class CustomerAuthenticationCreateConsumer : BaseMessageBroker, IHostedService
     {
-        private readonly ILogger<CustomerAuthenticationConsumer> _logger;
+        private readonly ILogger<CustomerAuthenticationCreateConsumer> _logger;
         private readonly IServiceScopeFactory _scopeFactory;
-        private const string QueueName = "customer_authen";
+        private const string QueueName = "customer_authen_create";
 
-        public CustomerAuthenticationConsumer(
-            ILogger<CustomerAuthenticationConsumer> logger,
+        public CustomerAuthenticationCreateConsumer(
+            ILogger<CustomerAuthenticationCreateConsumer> logger,
             IServiceScopeFactory scopeFactory) : base(logger)
         {
             _logger = logger;
@@ -49,21 +49,13 @@ namespace AuthenticationService.Services
                 var message = Encoding.UTF8.GetString(body);
 
                 // Deserialize the message
-                var customerFromMessage = JsonSerializer.Deserialize<RawCustomer>(message);
+                var customerFromMessage = JsonSerializer.Deserialize<Customer>(message);
                 _logger.LogInformation($"Custumer From Message is {customerFromMessage?.Email}");
 
                 if (customerFromMessage != null)
                 {
-                    var customer = new Customer
-                    {
-                        Id = customerFromMessage.Id,
-                        Email = customerFromMessage.Email,
-                        Password = customerFromMessage.Password,
-                        // Add other required properties
-                    };
-
                     // Process the customer authentication creation
-                    await CreateCustomerAuthen(customer, repository);
+                    await CreateCustomerAuthen(customerFromMessage, repository);
 
                     // Acknowledge the message
                     AcknowledgeMessage(e.DeliveryTag);

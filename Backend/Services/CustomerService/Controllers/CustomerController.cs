@@ -162,14 +162,14 @@ namespace CustomerService.Controllers
         }
 
 
-        [HttpPut("{customerId}")]
-        [Authorize(Policy = "AdminEmployeeOnly")]
-        public async Task<ActionResult> UpdateCustomer(int customerId, [FromBody] CustomerCreateDTO customerDto)
+        [HttpPut]
+        [Authorize]
+        public async Task<ActionResult> UpdateCustomer([FromBody] CustomerReadDTO customerDto)
         {
             try
             {
                 // Retrieve the existing customer from the repository
-                var existingCustomer = await _repository.GetCustomerByIdAsync(customerId);
+                var existingCustomer = await _repository.GetCustomerByIdAsync(customerDto.Id);
                 if (existingCustomer == null)
                 {
                     return NotFound("Customer not found");
@@ -192,6 +192,8 @@ namespace CustomerService.Controllers
                 // Save changes to the repository
                 await _repository.UpdateCustomerAsync(existingCustomer);
                 await _repository.SaveChangeAsync();
+
+                _customerPublisher.UpdateCustomerPubSub(existingCustomer);
 
                 return NoContent();
             }

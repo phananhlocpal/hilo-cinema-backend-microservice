@@ -1,6 +1,7 @@
 using AuthenticationService.Models;
 using AuthenticationService.Repositories;
 using AuthenticationService.Repositories.CustomerRepositories;
+using AuthenticationService.Repositories.EmployeeRepositories;
 using AuthenticationService.Services;
 using MessageBrokerService;
 using Microsoft.EntityFrameworkCore;
@@ -22,14 +23,19 @@ builder.Services.AddDbContext<AuthenticateContext>(options =>
 builder.Services.AddScoped<JwtTokenHandler>();
 builder.Services.AddScoped<JwtTokenHandlerEmp>();
 builder.Services.AddScoped<ICustomerRepo, CustomerRepo>();
+builder.Services.AddScoped<IEmployeeRepo, EmployeeRepo>();
 
 // Register singleton services
 builder.Services.AddSingleton<BaseMessageBroker>();
-builder.Services.AddSingleton<CustomerAuthenticationConsumer>();
-builder.Services.AddSingleton<IHostedService>(provider => provider.GetRequiredService<CustomerAuthenticationConsumer>());
+builder.Services.AddSingleton<CustomerAuthenticationCreateConsumer>();
+builder.Services.AddSingleton<IHostedService>(provider => provider.GetRequiredService<CustomerAuthenticationCreateConsumer>());
+
+builder.Services.AddSingleton<CustomerAuthenticationUpdateConsumer>();
+builder.Services.AddSingleton<IHostedService>(provider => provider.GetRequiredService<CustomerAuthenticationUpdateConsumer>());
 
 builder.Services.AddSingleton<EmployeeAuthenticationConsumer>();
 builder.Services.AddSingleton<IHostedService>(provider => provider.GetRequiredService<EmployeeAuthenticationConsumer>());
+
 // Configure CORS policy
 builder.Services.AddCors(options =>
 {
