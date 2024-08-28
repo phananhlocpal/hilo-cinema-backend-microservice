@@ -20,10 +20,10 @@ namespace SaleService.Services.HttpServices
 
             try
             {
-                var response = await client.GetAsync($"/{movieId}");
+                var response = await client.GetAsync($"{movieId}");
                 var responseContent = await response.Content.ReadAsStringAsync();
 
-                _logger.LogInformation("Response content for schedule request: {ResponseContent}", responseContent);
+                _logger.LogInformation("Response content for movie request: {ResponseContent}", responseContent);
 
                 if (response.IsSuccessStatusCode)
                 {

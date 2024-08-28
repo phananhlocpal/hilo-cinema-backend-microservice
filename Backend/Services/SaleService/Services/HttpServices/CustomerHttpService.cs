@@ -20,7 +20,7 @@ namespace SaleService.Services.HttpServices
 
             try
             {
-                var response = await client.GetAsync($"/{customerId}");
+                var response = await client.GetAsync($"{customerId}");
                 var responseContent = await response.Content.ReadAsStringAsync();
 
                 _logger.LogInformation("Response content for customer request: {ResponseContent}", responseContent);

@@ -140,6 +140,8 @@ namespace SaleService.Controllers
             var schedules = await scheduleTask;
             var customer = await customerTask;
 
+            _logger.LogInformation($"Schedules: {JsonSerializer.Serialize(schedules)}");
+            _logger.LogInformation($"Movie Id is: {schedules[0].MovieId}");
             // Get Movie
             var movie = await _movieHttpService.GetMovieById(schedules[0].MovieId);
             var venueInfo = await _theaterHttpService.GetVenueBySeatId(schedules[0].SeatId);
@@ -171,17 +173,21 @@ namespace SaleService.Controllers
             // Check if customer and employee are not null before proceeding
             if (customer == null) _logger.LogWarning($"Customer with ID {invoice.CustomerId} not found for InvoiceId: {invoice.Id}");
             if (employee == null) _logger.LogWarning($"Employee with ID {invoice.EmployeeId} not found for InvoiceId: {invoice.Id}");
-            
+
+            var employeeName = employee != null ? employee.Name : "";
+
             var invoiceReadDto = new OutputInvoiceDto
             {
                 Id = invoice.Id,
                 EmployeeId = invoice.EmployeeId,
-                EmployeeName = employee.Name ?? "",
+                EmployeeName = employeeName,
                 CustomerId = invoice.CustomerId,
                 CustomerName = customer.Name,
                 CustomerPhone = customer.Phone,
                 CustomerEmail = customer.Email,
                 CreatedDate = invoice.CreatedDate,
+                Date = schedules[0].Date,
+                Time = schedules[0].Time,
                 Movie = movie,
                 TheaterId = venueInfo.TheaterId,
                 TheaterName = venueInfo.TheaterName,

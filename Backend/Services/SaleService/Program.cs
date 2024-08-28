@@ -45,11 +45,11 @@ builder.Services.AddHttpClient("EmployeeService", client =>
 });
 builder.Services.AddHttpClient("CustomerService", client =>
 {
-    client.BaseAddress = new Uri("https://localhost:5005/api/Employee/");
+    client.BaseAddress = new Uri("https://localhost:5005/api/Customer/");
 });
 builder.Services.AddHttpClient("SeatService", client =>
 {
-    client.BaseAddress = new Uri("https://localhost:5002/api/Seats/");
+    client.BaseAddress = new Uri("http://localhost:5002/api/Seats/");
 });
 builder.Services.AddHttpClient("MovieService", client =>
 {
@@ -69,6 +69,8 @@ builder.Services.AddScoped<SalePublisherService>();
 builder.Services.AddScoped<ScheduleHttpService>();
 builder.Services.AddScoped<EmployeeHttpService>();
 builder.Services.AddScoped<CustomerHttpService>();
+builder.Services.AddScoped<MovieHttpService>();
+builder.Services.AddScoped<TheaterHttpService>();
 // Register HttpContextAccessor
 builder.Services.AddHttpContextAccessor();
 

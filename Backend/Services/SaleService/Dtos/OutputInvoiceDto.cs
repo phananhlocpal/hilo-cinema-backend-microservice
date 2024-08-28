@@ -11,6 +11,8 @@ namespace SaleService.Dtos
         public string CustomerName { get; set; }
         public string CustomerPhone { get; set; }
         public string CustomerEmail { get; set; }
+        public DateOnly Date { get; set; }
+        public TimeOnly Time { get; set; }
         public DateOnly CreatedDate { get; set; }
         public Movie Movie { get; set; }
         public int TheaterId { get; set; }

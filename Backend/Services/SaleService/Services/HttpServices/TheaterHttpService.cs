@@ -20,7 +20,7 @@ namespace SaleService.Services.HttpServices
 
             try
             {
-                var response = await client.GetAsync($"/getVenueBySeatId/{seatId}");
+                var response = await client.GetAsync($"getVenueBySeatId/{seatId}");
                 var responseContent = await response.Content.ReadAsStringAsync();
 
                 _logger.LogInformation("Response content for venue request: {ResponseContent}", responseContent);
@@ -67,7 +67,7 @@ namespace SaleService.Services.HttpServices
 
             try
             {
-                var response = await client.GetAsync($"/{seatId}");
+                var response = await client.GetAsync($"{seatId}");
                 var responseContent = await response.Content.ReadAsStringAsync();
 
                 _logger.LogInformation("Response content for venue request: {ResponseContent}", responseContent);

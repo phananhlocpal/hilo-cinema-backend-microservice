@@ -51,6 +51,9 @@ namespace TheaterService.Controllers
             return Ok(_mapper.Map<TheaterReadDto>(theater));
         }
 
+        
+
+
         // PUT: api/Theaters/5
         // Tương ứng với editTheater trong theaterAction
         // Chức năng này chỉ cho phép Admin hoặc Employee có quyền chỉnh sửa thông tin rạp chiếu

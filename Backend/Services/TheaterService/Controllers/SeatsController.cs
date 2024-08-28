@@ -66,9 +66,8 @@ namespace TheaterService.Controllers
         }
 
         // PUT: api/Seats/5
-        // Chức năng này chỉ cho phép Admin và Employee có quyền cập nhật thông tin ghế
         [HttpPut("{id}")]
-        [Authorize(Policy = "AdminEmployeeOnly")]
+        [Authorize]
         public async Task<IActionResult> PutSeat(int id, SeatCreateDto seatDto)
         {
 
@@ -101,7 +100,7 @@ namespace TheaterService.Controllers
         }
 
         [HttpGet("getVenueBySeatId/{seatId}")]
-        [Authorize]
+        [AllowAnonymous]
         public async Task<ActionResult<object>> GetVenueBySeatId(int seatId)
         {
             // Find the seat by seatId
@@ -125,7 +124,6 @@ namespace TheaterService.Controllers
                 return NotFound(new { Message = $"Theater with ID {room.TheaterId} not found." });
             }
 
-            // Create an anonymous object to return as the result
             var result = new
             {
                 RoomId = room.Id,
@@ -134,9 +132,35 @@ namespace TheaterService.Controllers
                 TheaterName = theater.Name
             };
 
-            // Return the result with an HTTP 200 OK response
             return Ok(result);
         }
+
+        [HttpGet("getRoomBySeatId/{seatId}")]
+        [AllowAnonymous]
+        public async Task<ActionResult<RoomReadDto>> GetRoomBySeatIdAsync(int seatId)
+        {
+            // Retrieve the seat based on seatId
+            var seat = await _context.Seats.FirstOrDefaultAsync(s => s.Id == seatId);
+
+            // Check if the seat exists
+            if (seat == null)
+            {
+                return NotFound(); // Return a 404 Not Found if the seat does not exist
+            }
+
+            // Retrieve the room based on the RoomId from the seat
+            var room = await _context.Rooms.FirstOrDefaultAsync(r => r.Id == seat.RoomId);
+
+            // Check if the room exists
+            if (room == null)
+            {
+                return NotFound(); // Return a 404 Not Found if the room does not exist
+            }
+
+            // Return the room mapped to RoomReadDto
+            return Ok(_mapper.Map<RoomReadDto>(room));
+        }
+
 
 
         // POST: api/Seats

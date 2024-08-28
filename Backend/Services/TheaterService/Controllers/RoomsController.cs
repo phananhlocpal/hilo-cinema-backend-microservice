@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TheaterService.Dtos;
@@ -28,6 +29,32 @@ namespace TheaterService.Controllers
         {
             var rooms = await _context.Rooms.ToListAsync();
             return Ok(_mapper.Map<IEnumerable<RoomReadDto>>(rooms));
+        }
+
+        [HttpGet("GetTheaterByRoomId/{roomId}")]
+        [AllowAnonymous]
+        public async Task<ActionResult<TheaterReadDto>> GetTheaterByRoomId(int roomId)
+        {
+            // Retrieve the room based on roomId
+            var room = await _context.Rooms.FirstOrDefaultAsync(r => r.Id == roomId);
+
+            // Check if the room exists
+            if (room == null)
+            {
+                return NotFound();
+            }
+
+            // Retrieve the theater based on the theaterId from the room
+            var theater = await _context.Theaters.FirstOrDefaultAsync(t => t.Id == room.TheaterId);
+
+            // Check if the theater exists
+            if (theater == null)
+            {
+                return NotFound();
+            }
+
+            // Map and return the theater data
+            return Ok(_mapper.Map<TheaterReadDto>(theater));
         }
 
         // GET: api/Rooms/5

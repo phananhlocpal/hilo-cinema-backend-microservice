@@ -21,6 +21,7 @@ namespace SaleService.Services.HttpServices
 
             try
             {
+                _logger.LogInformation("Movie request for invoice id: {InvoiceId}", invoiceId);
                 var response = await client.GetAsync($"GetScheduleByInvoiceId/{invoiceId}");
                 var responseContent = await response.Content.ReadAsStringAsync();
 

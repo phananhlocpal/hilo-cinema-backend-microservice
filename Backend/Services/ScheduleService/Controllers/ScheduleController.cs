@@ -81,6 +81,87 @@ namespace ScheduleService.Controllers
             return Ok(scheduleReadDtos);
         }
 
+        [HttpGet("GetAllBasicSchedule")]
+        [AllowAnonymous]
+        public async Task<ActionResult<IEnumerable<object>>> GetAllBasicSchedule()
+        {
+            // Lấy tất cả lịch chiếu từ cơ sở dữ liệu
+            var schedules = await _repository.GetAllScheduleAsync();
+
+            // Thu thập các ID duy nhất của Seat, Room, và Movie
+            var uniqueSeatIds = schedules.Select(s => s.SeatId).Distinct().ToList();
+            var uniqueMovieIds = schedules.Select(s => s.MovieId).Distinct().ToList();
+            var uniqueRoomIds = new HashSet<int>();
+
+            var roomDictionary = new Dictionary<int, Room>(); // Key: SeatId, Value: Room
+            var theaterDictionary = new Dictionary<int, Theater>(); // Key: RoomId, Value: Theater
+            var movieDictionary = new Dictionary<int, Movie>(); // Key: MovieId, Value: Movie
+
+            // Lấy thông tin phòng từ các SeatIds duy nhất
+            var roomTasks = uniqueSeatIds.Select(async seatId =>
+            {
+                var room = await _theaterHttpService.GetRoomBySeatId(seatId);
+                if (room != null)
+                {
+                    roomDictionary[seatId] = room;
+                    uniqueRoomIds.Add(room.Id); // Thêm RoomId vào danh sách duy nhất
+                }
+            });
+            await Task.WhenAll(roomTasks);
+
+            // Lấy thông tin rạp chiếu từ các RoomIds duy nhất
+            var theaterTasks = uniqueRoomIds.Select(async roomId =>
+            {
+                var theater = await _theaterHttpService.GetTheaterByRoomId(roomId);
+                if (theater != null)
+                {
+                    theaterDictionary[roomId] = theater;
+                }
+            });
+            await Task.WhenAll(theaterTasks);
+
+            // Lấy thông tin phim từ các MovieIds duy nhất
+            var movieTasks = uniqueMovieIds.Select(async movieId =>
+            {
+                var movie = await _movieHttpService.GetMovieById(movieId);
+                if (movie != null)
+                {
+                    movieDictionary[movieId] = movie;
+                }
+            });
+            await Task.WhenAll(movieTasks);
+
+            // Xây dựng danh sách kết quả từ dữ liệu đã lấy
+            var results = schedules
+                .GroupBy(s => new { s.SeatId, s.MovieId, s.Date, s.Time })
+                .Select(g =>
+                {
+                    var schedule = g.First(); // Lấy một bản ghi từ nhóm
+                    var room = roomDictionary.GetValueOrDefault(schedule.SeatId);
+                    var theater = room != null ? theaterDictionary.GetValueOrDefault(room.Id) : null;
+                    var movie = movieDictionary.GetValueOrDefault(schedule.MovieId);
+
+                    if (room != null && theater != null && movie != null)
+                    {
+                        return new
+                        {
+                            TheaterName = theater.Name,
+                            RoomName = room.Name,
+                            Date = schedule.Date,
+                            MovieName = movie.Title,
+                            Time = schedule.Time,
+                        };
+                    }
+
+                    return null; // Trả về null nếu không đủ thông tin để xây dựng kết quả
+                })
+                .Where(result => result != null)
+                .Distinct() // Loại bỏ các mục trùng lặp
+                .ToList();
+
+            return Ok(results);
+        }
+
         [HttpGet("getSeatsBySchedule")]
         [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<object>>> GetSeatsBySchedude( int movieId, DateOnly date, int theaterId, int roomId, TimeOnly time)
