@@ -30,7 +30,7 @@ namespace AuthenticationService.Controllers
         public ActionResult<AuthenticationResponse?> Authenticate([FromBody] AuthenticationRequest authencationRequest)
         {
             var authenticationResponse = _jwtTokenHandler.GenerateJwtToken(authencationRequest);
-            if (authenticationResponse == null) return Unauthorized();
+            if (authenticationResponse == null) return new AuthenticationResponse();
             return authenticationResponse;
         }
     }

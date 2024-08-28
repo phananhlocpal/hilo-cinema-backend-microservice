@@ -14,8 +14,8 @@ namespace SaleService.Profiles
 
             CreateMap<Invoice, InvoiceReadDto>();
 
-            CreateMap<Food, FoodReadDto>();
-            CreateMap<FoodCreateDto, Food>();
+            CreateMap<Models.Food, FoodReadDto>();
+            CreateMap<FoodCreateDto, Models.Food>();
 
 
 

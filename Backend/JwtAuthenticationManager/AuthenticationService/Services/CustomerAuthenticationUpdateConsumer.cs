@@ -43,7 +43,7 @@ namespace AuthenticationService.Services
 
                 // Deserialize the message
                 var customerFromMessage = JsonSerializer.Deserialize<Customer>(message);
-                _logger.LogInformation($"Custumer From Message is {customerFromMessage?.Email}");
+                _logger.LogInformation($"Custumer from (Updated) message is {customerFromMessage?.Email}");
 
                 if (customerFromMessage != null)
                 {

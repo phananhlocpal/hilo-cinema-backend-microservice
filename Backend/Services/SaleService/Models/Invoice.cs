@@ -16,7 +16,7 @@ public partial class Invoice
 
     public string? PaymentMethod { get; set; }
 
-    public float? Total { get; set; }
+    public double? Total { get; set; }
 
     public string? Status { get; set; }
 

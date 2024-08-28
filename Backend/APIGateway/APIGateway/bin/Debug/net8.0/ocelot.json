@@ -835,6 +835,21 @@
       }
     },
     {
+      "DownstreamPathTemplate": "/api/Invoice/GetInvoicesByCustomerId/{customerId}",
+      "DownstreamScheme": "https",
+      "UpstreamPathTemplate": "/InvoiceService/GetInvoicesByCustomerId/{customerId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5004
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      }
+    },
+    {
       "DownstreamPathTemplate": "/api/Payment/createInvoice",
       "DownstreamScheme": "https",
       "UpstreamPathTemplate": "/PaymentService/createInvoice",
@@ -849,6 +864,7 @@
         "TimeoutValue": 360000
       }
     },
+
     {
       "DownstreamPathTemplate": "/api/Food",
       "DownstreamScheme": "https",
@@ -981,6 +997,27 @@
       "QoSOptions": {
         "TimeoutValue": 360000
       }
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/Customer/verify-password",
+      "DownstreamScheme": "https",
+      "UpstreamPathTemplate": "/CustomerService/verify-password",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5005
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      }
+
     },
     // Employee Service
     //Add, Update, GetAll

@@ -66,7 +66,7 @@ namespace SaleService.Controllers
         {
             try
             {
-                var food = _mapper.Map<Food>(foodCreateDto);
+                var food = _mapper.Map<Models.Food>(foodCreateDto);
                 var createdFood = await _repository.CreateFoodAsync(food);
 
                 var foodReadDto = _mapper.Map<FoodReadDto>(createdFood);
@@ -90,7 +90,7 @@ namespace SaleService.Controllers
                     return NotFound();
                 }
 
-                var updatedFood = _mapper.Map<Food>(foodCreateDto);
+                var updatedFood = _mapper.Map<Models.Food>(foodCreateDto);
                 updatedFood.Id = id;
 
                 await _repository.UpdateFoodAsync(updatedFood);

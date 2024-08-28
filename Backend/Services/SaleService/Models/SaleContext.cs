@@ -63,7 +63,9 @@ public partial class SaleContext : DbContext
             entity.Property(e => e.Status)
                 .HasMaxLength(30)
                 .HasColumnName("status");
-            entity.Property(e => e.Total).HasColumnName("total");
+            entity.Property(e => e.Total)
+                .HasColumnName("total")
+                .HasColumnType("FLOAT");
         });
 
         modelBuilder.Entity<InvoiceFood>(entity =>

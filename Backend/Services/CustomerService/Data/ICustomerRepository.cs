@@ -13,6 +13,7 @@ namespace CustomerService.Data
         Task DisableCustomerAsync(int customerId);
         Task<bool> EmailExistsAsync(string email);
         Task<int> GetAllCount();
+        Task<bool> VerifyPasswordAsync(string email, string password);
         Task<bool> SaveChangeAsync();
     }
 }

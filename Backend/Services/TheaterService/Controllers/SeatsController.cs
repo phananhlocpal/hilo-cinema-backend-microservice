@@ -100,6 +100,45 @@ namespace TheaterService.Controllers
             return NoContent();
         }
 
+        [HttpGet("getVenueBySeatId/{seatId}")]
+        [Authorize]
+        public async Task<ActionResult<object>> GetVenueBySeatId(int seatId)
+        {
+            // Find the seat by seatId
+            var seat = await _context.Seats.FindAsync(seatId);
+            if (seat == null)
+            {
+                return NotFound(new { Message = $"Seat with ID {seatId} not found." });
+            }
+
+            // Find the room associated with the seat
+            var room = await _context.Rooms.FindAsync(seat.RoomId);
+            if (room == null)
+            {
+                return NotFound(new { Message = $"Room with ID {seat.RoomId} not found." });
+            }
+
+            // Find the theater associated with the room
+            var theater = await _context.Theaters.FindAsync(room.TheaterId);
+            if (theater == null)
+            {
+                return NotFound(new { Message = $"Theater with ID {room.TheaterId} not found." });
+            }
+
+            // Create an anonymous object to return as the result
+            var result = new
+            {
+                RoomId = room.Id,
+                RoomName = room.Name,
+                TheaterId = theater.Id,
+                TheaterName = theater.Name
+            };
+
+            // Return the result with an HTTP 200 OK response
+            return Ok(result);
+        }
+
+
         // POST: api/Seats
         // Chức năng này chỉ cho phép Admin thêm ghế mới
         /*[HttpPost]

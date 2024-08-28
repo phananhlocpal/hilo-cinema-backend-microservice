@@ -195,7 +195,7 @@ namespace CustomerService.Controllers
 
                 _customerPublisher.UpdateCustomerPubSub(existingCustomer);
 
-                return NoContent();
+                return Ok();
             }
             catch (KeyNotFoundException)
             {
@@ -245,5 +245,32 @@ namespace CustomerService.Controllers
 
             return Ok(new { exists = false });
         }
+
+        [HttpPost("verify-password")]
+        [Authorize]
+        public async Task<IActionResult> VerifyPassword([FromBody] VerifyPasswordRequest request)
+        {
+            if (request == null || string.IsNullOrWhiteSpace(request.Email) || string.IsNullOrWhiteSpace(request.Password))
+            {
+                return BadRequest("Invalid request.");
+            }
+
+            bool isPasswordValid = await _repository.VerifyPasswordAsync(request.Email, request.Password);
+
+            if (isPasswordValid)
+            {
+                return Ok(new { message = "Password is correct." });
+            }
+            else
+            {
+                return Unauthorized(new { message = "Invalid password." });
+            }
+        }
+
+    }
+    public class VerifyPasswordRequest
+    {
+        public string Email { get; set; }
+        public string Password { get; set; }
     }
 }

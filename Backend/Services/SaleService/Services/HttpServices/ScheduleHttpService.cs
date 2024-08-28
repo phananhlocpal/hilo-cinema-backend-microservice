@@ -15,7 +15,7 @@ namespace SaleService.Services.HttpServices
             _logger = logger;
         }
 
-        public async Task<IEnumerable<Schedule>> GetScheduleByInvoiceId(int invoiceId)
+        public async Task<List<RawSchedule>> GetScheduleByInvoiceId(int invoiceId)
         {
             var client = _httpClientFactory.CreateClient("ScheduleService");
 
@@ -34,31 +34,31 @@ namespace SaleService.Services.HttpServices
                         {
                             PropertyNameCaseInsensitive = true
                         };
-                        var schedules = JsonSerializer.Deserialize<List<Schedule>>(responseContent, options);
+                        var schedules = JsonSerializer.Deserialize<List<RawSchedule>>(responseContent, options);
                         _logger.LogInformation("Deserialized schedules: {@ScheduleDetails}", schedules);
-                        return schedules ?? new List<Schedule>(); // Return an empty list if deserialization returns null
+                        return schedules ?? new List<RawSchedule>(); // Return an empty list if deserialization returns null
                     }
                     catch (JsonException ex)
                     {
                         _logger.LogError(ex, "Error deserializing response content for schedule request");
-                        return new List<Schedule>(); // Return an empty list on deserialization error
+                        return new List<RawSchedule>(); // Return an empty list on deserialization error
                     }
                 }
                 else
                 {
                     _logger.LogWarning("Failed to retrieve schedule. Status code: {StatusCode}", response.StatusCode);
-                    return new List<Schedule>(); // Return an empty list if the response status is not success
+                    return new List<RawSchedule>(); // Return an empty list if the response status is not success
                 }
             }
             catch (HttpRequestException ex)
             {
                 _logger.LogError(ex, "HTTP request error while retrieving schedule");
-                return new List<Schedule>(); // Return an empty list on HTTP request error
+                return new List<RawSchedule>(); // Return an empty list on HTTP request error
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Unexpected error while retrieving schedule");
-                return new List<Schedule>(); // Return an empty list on unexpected error
+                return new List<RawSchedule>(); // Return an empty list on unexpected error
             }
         }
     }

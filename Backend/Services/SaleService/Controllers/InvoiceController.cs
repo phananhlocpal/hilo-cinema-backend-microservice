@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using SaleService.Dtos;
 using SaleService.Models;
 using SaleService.OtherModels;
+using SaleService.Repositories.FoodRepository;
 using SaleService.Repositories.InvoiceFoodRepository;
 using SaleService.Repositories.InvoiceRepository;
 using SaleService.Service.RabbitMQServices;
@@ -20,26 +21,39 @@ namespace SaleService.Controllers
     {
         private readonly IInvoiceRepo _repository;
         private readonly IInvoiceFoodRepo _invoiceFoodRepo;
+        private readonly IFoodRepo _foodRepo;
         private readonly IMapper _mapper;
         private readonly ScheduleHttpService _scheduleHttpService;
         private readonly CustomerHttpService _customerHttpService;
         private readonly EmployeeHttpService _employeeHttpService;
         private readonly SalePublisherService _salePublisherService;
+        private readonly MovieHttpService _movieHttpService;
+        private readonly TheaterHttpService _theaterHttpService;
         private readonly ILogger<InvoiceController> _logger;
 
         public InvoiceController(
              IInvoiceRepo repository,
-              IInvoiceFoodRepo invoiceFoodRepo,
-        IMapper mapper,
+             IInvoiceFoodRepo invoiceFoodRepo,
+             IFoodRepo foodRepo,
+             IMapper mapper,
              ScheduleHttpService scheduleHttpService,
+             CustomerHttpService customerHttpService,
+             EmployeeHttpService employeeHttpService,
              SalePublisherService salePublisherService,
+             MovieHttpService movieHttpService,
+             TheaterHttpService theaterHttpService,
              ILogger<InvoiceController> logger)
         {
             _repository = repository;
             _invoiceFoodRepo = invoiceFoodRepo;
+            _foodRepo = foodRepo;
             _mapper = mapper;
             _scheduleHttpService = scheduleHttpService;
+            _customerHttpService = customerHttpService;
+            _employeeHttpService = employeeHttpService;
             _salePublisherService = salePublisherService;
+            _movieHttpService = movieHttpService;
+            _theaterHttpService = theaterHttpService;
             _logger = logger;
         }
 
@@ -95,7 +109,7 @@ namespace SaleService.Controllers
 
         [HttpGet("GetInvoiceById/{invoiceId}")]
         [AllowAnonymous]
-        public async Task<ActionResult<InvoiceReadDto>> GetInvoiceById(int invoiceId)
+        public async Task<ActionResult<OutputInvoiceDto>> GetInvoiceById(int invoiceId)
         {
             var invoice = await _repository.GetInvoiceByIdAsync(invoiceId);
 
@@ -108,39 +122,77 @@ namespace SaleService.Controllers
             // Start all tasks concurrently
             var scheduleTask = _scheduleHttpService.GetScheduleByInvoiceId(invoice.Id);
             var customerTask = _customerHttpService.GetCustomerById(invoice.CustomerId);
-            var employeeTask = _employeeHttpService.GetEmployeeById(invoice.EmployeeId);
+            Employee employee = new Employee();
+            if (invoice.EmployeeId != 0)
+            {
+                var employeeTask = _employeeHttpService.GetEmployeeById(invoice.EmployeeId);
+                employee = await employeeTask;
+
+            }
+            else
+            {
+                employee = null;
+            }
 
             // Wait for all tasks to complete
-            await Task.WhenAll(scheduleTask, customerTask, employeeTask);
+            await Task.WhenAll(scheduleTask, customerTask);
 
             var schedules = await scheduleTask;
             var customer = await customerTask;
-            var employee = await employeeTask;
+
+            // Get Movie
+            var movie = await _movieHttpService.GetMovieById(schedules[0].MovieId);
+            var venueInfo = await _theaterHttpService.GetVenueBySeatId(schedules[0].SeatId);
+
+            // Get Seats
+            List<Seat> seats = new List<Seat>();
+            foreach (var ticket in schedules)
+            {
+                var seat = await _theaterHttpService.GetSeatById(ticket.SeatId);
+                seats.Add(seat);
+            }    
+
+            // GetFoods
+            var invoiceFoods = await _invoiceFoodRepo.GetInvoiceFoodsByInvoiceIdAsync(invoiceId);
+            List<Dtos.Food> foods = new List<Dtos.Food>();
+            foreach (var invoiceFood in invoiceFoods)
+            {
+                var foodItem = await _foodRepo.GetFoodByIdAsync(invoiceFood.FoodId);
+                var food = new Dtos.Food
+                {
+                    Id = invoiceFood.FoodId,
+                    Name = foodItem.Name,
+                    Price = foodItem.Price ?? 0,
+                    Quantity = invoiceFood.Quantity ?? 0,
+                };
+                foods.Add(food);
+            }
 
             // Check if customer and employee are not null before proceeding
-            if (customer == null)
-            {
-                _logger.LogWarning($"Customer with ID {invoice.CustomerId} not found for InvoiceId: {invoice.Id}");
-            }
-
-            if (employee == null)
-            {
-                _logger.LogWarning($"Employee with ID {invoice.EmployeeId} not found for InvoiceId: {invoice.Id}");
-            }
-
-            var invoiceReadDto = new InvoiceReadDto
+            if (customer == null) _logger.LogWarning($"Customer with ID {invoice.CustomerId} not found for InvoiceId: {invoice.Id}");
+            if (employee == null) _logger.LogWarning($"Employee with ID {invoice.EmployeeId} not found for InvoiceId: {invoice.Id}");
+            
+            var invoiceReadDto = new OutputInvoiceDto
             {
                 Id = invoice.Id,
                 EmployeeId = invoice.EmployeeId,
+                EmployeeName = employee.Name ?? "",
                 CustomerId = invoice.CustomerId,
-                PromotionId = invoice.PromotionId,
+                CustomerName = customer.Name,
+                CustomerPhone = customer.Phone,
+                CustomerEmail = customer.Email,
                 CreatedDate = invoice.CreatedDate,
+                Movie = movie,
+                TheaterId = venueInfo.TheaterId,
+                TheaterName = venueInfo.TheaterName,
+                RoomId = venueInfo.RoomId,
+                RoomName = venueInfo.RoomName,
+                Seats = seats,
+                Foods = foods,
+                PromotionId = invoice.PromotionId,
                 PaymentMethod = invoice.PaymentMethod,
                 Total = invoice.Total,
                 Status = invoice.Status,
-                Schedules = schedules,
-                Customer = customer,
-                Employee = employee,
             };
 
             return Ok(invoiceReadDto);
@@ -165,22 +217,23 @@ namespace SaleService.Controllers
             {
                 // Fetch schedules, customer, and employee concurrently
                 var scheduleTask = _scheduleHttpService.GetScheduleByInvoiceId(invoice.Id);
-                var customerTask = _customerHttpService.GetCustomerById(invoice.CustomerId);
-                var employeeTask = _employeeHttpService.GetEmployeeById(invoice.EmployeeId);
+                Employee employee = new Employee();
+                if (invoice.EmployeeId != 0)
+                {
+                    var employeeTask = _employeeHttpService.GetEmployeeById(invoice.EmployeeId);
+                    employee = await employeeTask;
 
+                }
+                else
+                {
+                    employee = null;
+                }
                 // Await all tasks to complete
-                await Task.WhenAll(scheduleTask, customerTask, employeeTask);
+                await Task.WhenAll(scheduleTask);
 
                 var schedules = await scheduleTask;
-                var customer = await customerTask;
-                var employee = await employeeTask;
 
                 // Logging if customer or employee information is not found
-                if (customer == null)
-                {
-                    _logger.LogWarning($"Customer with ID {invoice.CustomerId} not found for InvoiceId: {invoice.Id}");
-                }
-
                 if (employee == null)
                 {
                     _logger.LogWarning($"Employee with ID {invoice.EmployeeId} not found for InvoiceId: {invoice.Id}");
@@ -198,7 +251,7 @@ namespace SaleService.Controllers
                     Total = invoice.Total,
                     Status = invoice.Status,
                     Schedules = schedules,
-                    Customer = customer,
+                    Customer = null,
                     Employee = employee,
                 };
 

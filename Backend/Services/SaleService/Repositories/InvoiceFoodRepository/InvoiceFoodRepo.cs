@@ -69,6 +69,14 @@ namespace SaleService.Repositories.InvoiceFoodRepository
             return await SaveChangesAsync();
         }
 
+        public async Task<List<InvoiceFood>> GetInvoiceFoodsByInvoiceIdAsync(int invoiceId)
+        {
+            var invoiceFoods = await _context.InvoiceFoods
+                 .Where(i => i.InvoiceId == invoiceId)
+                 .ToListAsync();
+
+            return invoiceFoods;
+        }
 
         public async Task<bool> SaveChangesAsync()
         {

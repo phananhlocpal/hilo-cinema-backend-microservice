@@ -59,10 +59,20 @@ namespace SaleService.Repositories.InvoiceRepository
 
         public async Task<IEnumerable<Invoice>> GetInvoicesByCustomerId(int customerId)
         {
-            var query = await _context.Invoices
-                .Where(i => i.Id == customerId)
-                .ToListAsync();
-            return query;
+            return await _context.Invoices
+        .Where(i => i.CustomerId == customerId)
+        .Select(i => new Invoice
+        {
+            Id = i.Id,
+            CreatedDate = i.CreatedDate,
+            EmployeeId = i.EmployeeId,
+            CustomerId = i.CustomerId,
+            PromotionId = i.PromotionId,
+            PaymentMethod = i.PaymentMethod,
+            Total = (float?)i.Total, // Handle conversion if needed
+            Status = i.Status
+        })
+        .ToListAsync();
         }
 
         public async Task<bool> DeleteInvoiceAsync(int invoiceId)

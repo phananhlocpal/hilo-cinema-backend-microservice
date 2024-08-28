@@ -72,5 +72,15 @@ namespace CustomerService.Data
         {
             return await _context.Customers.AnyAsync(e => e.Email == email);
         }
+
+        public async Task<bool> VerifyPasswordAsync(string email, string password)
+        {
+            var customer = await GetCustomerByEmailAsync(email);
+            if (customer == null)
+            {
+                return false; 
+            }
+            return BCrypt.Net.BCrypt.Verify(password, customer.Password);
+        }
     }
 }

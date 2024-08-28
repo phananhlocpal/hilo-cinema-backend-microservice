@@ -37,7 +37,7 @@ builder.Services.AddDbContext<SaleContext>(options =>
 // Register HttpClient
 builder.Services.AddHttpClient("ScheduleService", client =>
 {
-    client.BaseAddress = new Uri("https://localhost:5003/api/Schedule/");
+    client.BaseAddress = new Uri("http://localhost:5003/api/Schedule/");
 });
 builder.Services.AddHttpClient("EmployeeService", client =>
 {
@@ -46,6 +46,14 @@ builder.Services.AddHttpClient("EmployeeService", client =>
 builder.Services.AddHttpClient("CustomerService", client =>
 {
     client.BaseAddress = new Uri("https://localhost:5005/api/Employee/");
+});
+builder.Services.AddHttpClient("SeatService", client =>
+{
+    client.BaseAddress = new Uri("https://localhost:5002/api/Seats/");
+});
+builder.Services.AddHttpClient("MovieService", client =>
+{
+    client.BaseAddress = new Uri("https://localhost:5001/api/Movies/");
 });
 
 // Register AutoMapper

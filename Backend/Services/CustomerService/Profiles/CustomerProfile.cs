@@ -10,6 +10,7 @@ namespace CustomerService.Profiles
         {
             CreateMap<Customer, CustomerReadDTO>();
             CreateMap<CustomerCreateDTO, Customer>();
+            CreateMap<CustomerReadDTO, Customer>();
         }
     }
 }
