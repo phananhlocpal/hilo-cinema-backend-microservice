@@ -145,7 +145,9 @@ namespace ScheduleService.Controllers
                     {
                         return new
                         {
+                            TheaterId = theater.Id,
                             TheaterName = theater.Name,
+                            RoomId = room.Id,
                             RoomName = room.Name,
                             Date = schedule.Date,
                             MovieName = movie.Title,
