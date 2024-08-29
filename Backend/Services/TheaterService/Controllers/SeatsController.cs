@@ -53,7 +53,7 @@ namespace TheaterService.Controllers
         // Chức năng này có thể cho phép Anonymous truy cập để xem các ghế theo RoomId
         [HttpGet("GetSeatsByRoom/{roomId}")]
         [AllowAnonymous]
-        public async Task<ActionResult<IEnumerable<SeatReadDto>>> GetSeatsByRoom(int roomId)
+        public async Task<ActionResult<IEnumerable<SeatReadDto>>> GetSeatsByRoomId(int roomId)
         {
             var seats = await _context.Seats.Where(s => s.RoomId == roomId).ToListAsync();
 

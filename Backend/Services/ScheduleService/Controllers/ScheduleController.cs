@@ -150,6 +150,7 @@ namespace ScheduleService.Controllers
                             RoomId = room.Id,
                             RoomName = room.Name,
                             Date = schedule.Date,
+                            MovieId = movie.Id,
                             MovieName = movie.Title,
                             Time = schedule.Time,
                         };
@@ -369,7 +370,137 @@ namespace ScheduleService.Controllers
             }
         }
 
+        [HttpPost("CreateSchedule")]
+        [AllowAnonymous]
+        public async Task<IActionResult> CreateSchedule(CreateScheduleInput createScheduleInput)
+        {
+            try
+            {
+                // Lấy danh sách ghế theo RoomId
+                var seats = await _theaterHttpService.GetSeatsByRoomId(createScheduleInput.RoomId);
+                if (seats == null || !seats.Any())
+                {
+                    _logger.LogWarning("No seats found for RoomId: {RoomId}", createScheduleInput.RoomId);
+                    return BadRequest("No seats found for the selected room.");
+                }
+
+                // Tạo danh sách các lịch chiếu
+                var schedules = seats.Select(seat => new Schedule
+                {
+                    MovieId = createScheduleInput.MovieId,
+                    Date = createScheduleInput.Date,
+                    Time = createScheduleInput.Time,
+                    SeatId = seat.Id,
+                    InvoiceId = null,
+                }).ToList();
+
+                // Kiểm tra danh sách lịch chiếu
+                if (!schedules.Any())
+                {
+                    _logger.LogWarning("No schedules created. The list is empty.");
+                    return BadRequest("No schedules created.");
+                }
+
+                // Gọi repository để lưu danh sách lịch chiếu
+                await _repository.CreateSchedulesAsync(schedules);
+
+                _logger.LogInformation("Schedules created successfully for MovieId: {MovieId}", createScheduleInput.MovieId);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to create schedules.");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Failed to create schedules.");
+            }
+        }
+
+
+        [HttpPost("CheckIsExistInvoice")]
+        [AllowAnonymous]
+        public async Task<IActionResult> CheckIsExistInvoice(int roomId, int movieId, DateOnly date, TimeOnly time)
+        {
+            try
+            {
+                // Lấy danh sách ghế theo RoomId
+                var seats = await _theaterHttpService.GetSeatsByRoomId(roomId);
+                if (seats == null || !seats.Any())
+                {
+                    _logger.LogWarning("No seats found for RoomId: {RoomId}", roomId);
+                    return Ok(false); 
+                }
+
+                // Kiểm tra xem có vé nào với InvoiceId không
+                foreach (var seat in seats)
+                {
+                    var schedule = await _repository.GetScheduleByCriteriaAsync(movieId:movieId, date:date, time:time, seatId:seat.Id);
+
+                    if (schedule.InvoiceId != null)
+                    {
+                        return Ok(true); 
+                    }
+                }
+
+                return Ok(false); 
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error checking for existing invoices.");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error checking for existing invoices.");
+            }
+        }
+
+        [HttpDelete("DeleteSchedule")]
+        [AllowAnonymous]
+        public async Task<IActionResult> DeleteSchedule(int roomId, int movieId, DateOnly date, TimeOnly time)
+        {
+            try
+            {
+                var seats = await _theaterHttpService.GetSeatsByRoomId(roomId);
+
+                if (seats == null || !seats.Any())
+                {
+                    _logger.LogWarning("No seats found for RoomId: {RoomId}", roomId);
+                    return NotFound("No seats found for the specified room.");
+                }
+
+                bool anyDeleted = false;
+
+                foreach (var seat in seats)
+                {
+                    var result = await _repository.DeleteSchedule(movieId: movieId, date: date, time: time, seatId: seat.Id);
+                    if (result)
+                    {
+                        anyDeleted = true;
+                    }
+                }
+
+                if (anyDeleted)
+                {
+                    return Ok("Schedules deleted successfully.");
+                }
+                else
+                {
+                    return NotFound("No schedules found to delete for the specified criteria.");
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while deleting schedules.");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error occurred while deleting schedules.");
+            }
+        }
+
     }
+
+    public class CreateScheduleInput
+    {
+        public int TheaterId { get; set; }
+        public int RoomId { get; set; }
+        public DateOnly Date { get; set; }
+        public TimeOnly Time { get; set; }
+        public int MovieId { get; set; }
+    }
+
     public class TheaterScheduleDto
     {
         public int TheaterId { get; set; } // ID của rạp chiếu phim

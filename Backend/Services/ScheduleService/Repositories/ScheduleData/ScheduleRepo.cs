@@ -33,7 +33,7 @@ namespace ScheduleService.Repositories.ScheduleRepository
             return await _context.Schedules.ToListAsync();
         }
 
-        public async Task<Schedule> GetScheduleByCriteriaAsync(int? theaterId = null, int? movieId = null, DateOnly? date = null, TimeOnly? time = null, string? movieType = null, int? roomId = null)
+        public async Task<Schedule> GetScheduleByCriteriaAsync(int? movieId = null, DateOnly? date = null, TimeOnly? time = null, int? seatId = null)
         {
             var query = _context.Schedules.AsQueryable();
 
@@ -50,6 +50,10 @@ namespace ScheduleService.Repositories.ScheduleRepository
             if (time.HasValue)
             {
                 query = query.Where(s => s.Time == time.Value);
+            }
+            if (seatId.HasValue)
+            {
+                query = query.Where(s => s.SeatId == seatId.Value);
             }
 
             return await query.FirstOrDefaultAsync();
@@ -125,6 +129,37 @@ namespace ScheduleService.Repositories.ScheduleRepository
             await _context.SaveChangesAsync();
 
             return existingSchedule;
+        }
+
+        public async Task<bool> DeleteSchedule(int movieId, DateOnly date, TimeOnly time, int seatId)
+        {
+            try
+            {
+                var schedule = await _context.Schedules
+                    .Where(s => s.MovieId == movieId && s.Date == date && s.Time == time && s.SeatId == seatId)
+                    .FirstOrDefaultAsync();
+
+                if (schedule == null)
+                {
+                    return false; 
+                }
+
+                _context.Schedules.Remove(schedule);
+                await _context.SaveChangesAsync();
+
+                return true; 
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+
+        public async Task CreateSchedulesAsync(IEnumerable<Schedule> schedules)
+        {
+            _context.Schedules.AddRange(schedules);
+            await _context.SaveChangesAsync();
         }
     }
 }

@@ -803,6 +803,21 @@
         "TimeoutValue": 360000
       }
     },
+    {
+      "DownstreamPathTemplate": "/api/Schedule/CreateSchedule",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/ScheduleService/CreateSchedule",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      }
+    },
     // Sale Service
     {
       "DownstreamPathTemplate": "/api/Invoice",
